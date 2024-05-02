@@ -1,0 +1,111 @@
+/*
+Paleta de colores seleccionada
+
+https://paletadecolores.com.ar/paleta/6da67a/77b885/86c28b/859987/4a4857/
+
+*/
+
+:root{
+  /*Primera paleta*/
+  --first-grey:#EEEDEB;
+  --first-cream:#E0CCBE;
+  --first-grey-dark:#747264;
+  --first-dark:#3C3633;
+
+  /*Segunda paleta de colores*/
+  --second-palid-blue:#8CB9BD;
+  --second-white:#FEFBF6;
+  --second-orange: #ECB159;
+  --second-brown:#B67352;
+
+  /*Tercera paleta de colores*/
+  --third-high-brown:#6B240C;
+  --third-low-brown:#994D1C;
+  --third-orange:#E48F45;
+  --third-skin:#F5CCA0;
+
+  /*Cuarta paleta de colores*/
+  --forth-palid-skin:#FAEBE0;
+  --forth-first-green: #C9E4C5;
+  --forth-second-green:#B5CDA3;
+  --forth-brown:#C1AC95;
+
+  /*atributos*/
+  --color-fondo-pie:var(--first-dark);
+  --color-fondo-navbar:var(--first-dark);
+  --color-letra-pie:var(--first-grey);
+  --color-letra-navbar:var(--first-grey);
+  --color-fondo-general:var(--first-grey);
+
+}
+body{
+  position: relative;
+  min-height: 100vh;
+  padding-bottom: 2.5rem;    
+  background-color:var(--color-fondo-general)!important;
+  font-family: "Space Grotesk", 'Times New Roman', Times, serif;
+    
+}
+a{
+    cursor: pointer;
+    text-decoration: none;
+
+}
+
+
+
+ul{
+  list-style:none!important;
+}
+
+.optionBar{
+    background-color: var(--color-fondo-navbar);
+    border: none;
+    
+}
+
+.hamburgerBtn{
+  background-color: var(--color-letra-navbar);
+  
+}
+
+.optionBar a{
+  color:var(--color-letra-navbar);
+  
+}
+
+.optionBar ul{
+  background-color: var(--color-fondo-navbar);
+  color:var(--color-letra-navbar);
+}
+
+.opcionesRegistro a{
+   color: var(--first-dark);
+   
+}
+
+/*Inicio del código para mantener siempre el pie de página debajo
+Sacado de: 
+
+https://www.freecodecamp.org/espanol/news/como-mantener-tu-pie-de-pagina-donde-pertenece/
+
+*/
+
+
+#footer {
+  max-height: 100vh;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 2.5rem; 
+  color:var(--color-letra-pie); 
+}
+
+
+  .footer-color{
+    background-color:var(--color-fondo-pie)!important;
+  }
+
+  .footer-color li{
+    list-style-type: none;
+  }

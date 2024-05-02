@@ -1,0 +1,52 @@
+<div class="sticky-top">
+    <button class="btn d-lg-none hamburgerBtn my-3" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbar" aria-controls="navbar">
+             <i class="bi bi-list"></i>
+    
+    </button>
+          <div class="offcanvas-lg offcanvas-end" tabindex="-1" id="navbar" aria-labelledby="offcanvasResponsiveLabel">
+        <div class="offcanvas-header">
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#navbar" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body optionBar">
+
+        <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 fs-5">
+              <li class="nav-item">
+                <a class="nav-link" aria-current="page" href="${pathHome}">Home</a>
+              </li>
+
+             
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="${pathProduct}"role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                  Productos
+                </a>
+                <ul class="dropdown-menu optionBar">
+                  <li><a class="dropdown-item" id="equipoMate"
+                  onclick="getProduct('${catEquipoMate}')">
+                  Equipos De Mate</a></li>
+                  <li><a class="dropdown-item" id="mate"
+                  onclick="getProduct('${catMate}')">Mate</a></li>
+                  <li><a class="dropdown-item" id="termo-mate">Termos y Mates</a></li>
+                  <li><a class="dropdown-item" id="latas">Juego De Latas</a></li>
+                  <li><a class="dropdown-item" id="bolsos">Bolsos Materos</a></li>
+                </ul>
+               
+               </li>
+               
+               
+              <li class="nav-item">
+              <a class="nav-link" aria-current="page" href="#">Info</a>
+              </li>
+
+            
+            <li class="nav-item">
+                <a class="nav-link" aria-current="page" href='${contact}'>Contacto</a>
+            </li>
+            </ul>
+       
+        </div>
+      </nav>
+        </div>
+      </div>
+      </div>

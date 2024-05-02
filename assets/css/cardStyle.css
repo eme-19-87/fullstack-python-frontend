@@ -1,0 +1,112 @@
+/*
+Fuente Original: https://www.youtube.com/watch?v=ivqJwZ5rbPw&t=5s
+
+Nota: Fui modificando algunas de las características respecto de lo mostrado en los vídeos 
+*/
+
+:root{
+    /*Primera paleta*/
+  
+
+  /*Segunda paleta de colores*/
+  --second-palid-blue:#8CB9BD;
+  --second-white:#FEFBF6;
+  --second-orange: #ECB159;
+  --second-brown:#B67352;
+
+  /*Tercera paleta de colores*/
+  --third-high-brown:#6B240C;
+  --third-low-brown:#994D1C;
+  --third-orange:#E48F45;
+  --third-skin:#F5CCA0;
+
+  /*Cuarta paleta de colores*/
+  --forth-palid-skin:#FAEBE0;
+  --forth-first-green: #C9E4C5;
+  --forth-second-green:#B5CDA3;
+  --forth-brown:#C1AC95;
+
+
+    --color-fondo-tarjeta-datos:var(--first-dark);
+    --color-fondo-tarjeta:var(--first-grey);
+    --color-letra-tarjeta-datos:var(--first-dark);
+  
+}
+.card-container{
+    /*si se emplea el código de adaptación del pie, este valor de min-heigth es necesario
+    para evitar que se choquen el pie y las tarjetas*/
+    min-height: 100vh;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    max-width:1200px;
+    text-align: center;
+    margin: 0 auto;
+    margin-top:0.5rem;
+    margin-bottom:0.5rem;
+}
+
+.card-product{
+    
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: center;
+    background-color:transparent;
+    margin:15px auto;
+    height: 400px;
+    width: 320px;
+    border-radius: 10%;
+    transition: color 300ms;
+    margin-bottom: 0.5rem;
+   
+}
+
+
+.product-data{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 320px;
+    height: 380px;
+    border-radius: 10%;
+    background-color: transparent;
+    color:var(--color-letra-tarjeta-datos);
+    transition: background-color 1000ms;
+
+}
+
+.card-product:hover{
+    cursor: pointer;
+    background-color:var(--color-fondo-tarjeta-datos);
+}
+
+.card-product:hover .product-data{
+
+    background-color:var(--color-fondo-tarjeta);
+    color:var(--color-fondo-tarjeta-datos);
+
+}
+
+.card-product:hover .product-data a{
+
+    color:var(--color-fondo-tarjeta-datos);
+
+}
+
+
+
+
+.img-product{
+    height: 150px;
+    width: 200px;
+    background-size: cover;
+
+}
+
+.cart-button{
+    color:aliceblue;
+}

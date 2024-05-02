@@ -1,0 +1,19 @@
+.card-container{
+    width: 300px;
+    height:  800px;
+}
+
+.card{
+    position: relative;
+    background: linear-gradient(transparent 80%,#000), url('../img/setMatero2.png');
+    background-position: center;
+    background-size: cover;
+width: 300px;
+height: 400px;
+}
+
+.landing{
+    position:relative;
+   height: 100%;
+    
+}
