@@ -1,4 +1,5 @@
 window.addEventListener("load", ()=>{
+	insertarFavicon();
 	insertarFontAwesome();
 	insertarCssBoostrap();
 	insertarScriptBoostrap();
@@ -11,6 +12,19 @@ window.addEventListener("close",()=>{
 	sessionStorage.removeItem("data");
 })
 
+
+function insertarFavicon(){
+	let favicon = document.createElement('link');
+	let head=document.getElementsByTagName("head")[0];
+
+	// Establecer el nuevo favicon
+	favicon.type = 'image/x-icon';
+	favicon.rel = 'icon';
+	favicon.href = 'assets/img/Logos/te-de-mate.ico'; // Cambiar 'ruta/a/tu/nuevo/favicon.ico' con la ruta a tu nuevo favicon
+
+	// Reemplazar el favicon existente con el nuevo
+	head.appendChild(favicon);
+}
 function insertarCssBoostrap(){
 	
 	let head=document.getElementsByTagName("head")[0];
@@ -68,7 +82,7 @@ function insertarEstilos(){
 }
 
 function getProduct(category){
-	const url='http://localhost/Mates/customCard.html?category='+category;
+	const url='/customCard.html?category='+category;
 	window.location.href = url;
 }
 

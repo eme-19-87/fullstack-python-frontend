@@ -60,15 +60,58 @@ function placeCards(category="EquipoMate"){
 }
 
 function placeACard(data){
-    const cardProduct=document.createElement("div");
+    const cardItem=document.createElement('li');
+    const card=document.createElement('div');
+    const cardImg=document.createElement('img');
+    const cardContent=document.createElement('div');
+    const cardTitle=document.createElement('div');
+    const cardText=document.createElement('p');
+    const cardButton=document.createElement('button');
+    const cartButton=document.createElement("a");
+    const detailsContainer=document.createElement("div");
+
+    const cardContainer=document.getElementById("cardContainer");
+    cardItem.setAttribute('class','cards__item');
+    card.setAttribute('class','card');
+    cardImg.setAttribute('class','card__image');
+    cardImg.classList.add('class','card__image--fence');
+    cardContent.setAttribute('class','card__content');
+    cardTitle.setAttribute('class','card_title');
+    cardText.setAttribute("class","card__text");
+    cardButton.setAttribute("class","btn");
+    cardButton.classList.add("class","btn--block");
+    cardButton.classList.add("class","card__btn");
+    cartButton.setAttribute("class","cart-button bi bi-cart");
+    detailsContainer.setAttribute("class","details-container");
+
+    cardTitle.innerHTML=data.nombre;
+    cardText.innerHTML=data.precio;
+    cardImg.setAttribute('src', "data:image/jpg;base64," + data.rutaImg);
+    cardButton.innerText="Detalles";
+    cartButton.innerHTML="Agregar";
+    card.append(cardImg);
+    card.append(cardContent);
+    cardContent.append(cardTitle);
+    cardContent.append(cardText);
+    detailsContainer.append(cardButton);
+    detailsContainer.append(cartButton);
+    cardContent.append(detailsContainer);
+    cardItem.append(card);
+
+    cardContainer.append(cardItem);
+
+   /* const cardProduct=document.createElement("div");
     const dataProduct=document.createElement("div");
     const imgProduct=document.createElement("img");
     const titleProduct=document.createElement("h4");
     const priceProduct=document.createElement("h5");
     const detailsProduct=document.createElement("p");
     const cartButton=document.createElement("a");
-    const cardContainer=document.getElementById("cardContainer");
+
+   
+
     cartButton.setAttribute("class","cart-button bi bi-cart");
+   
     cartButton.innerHTML="Carrito";
     cardProduct.setAttribute('class',"card-product");
     dataProduct.setAttribute('class',"product-data");
@@ -92,5 +135,5 @@ function placeACard(data){
     dataProduct.append(priceProduct);
     dataProduct.append(cartButton);
     cardProduct.append(dataProduct);
-    cardContainer.append(cardProduct)
+    cardContainer.append(cardProduct)*/
 }
