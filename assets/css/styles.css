@@ -66,11 +66,18 @@ ul{
 
 .hamburgerBtn{
   background-color: var(--color-letra-navbar);
+  color:var(--first-dark);
   
 }
 
+.hamburguerIcon{
+  width:50px;
+}
+
+
 .optionBar a{
   color:var(--color-letra-navbar);
+ 
   
 }
 
@@ -99,6 +106,7 @@ https://www.freecodecamp.org/espanol/news/como-mantener-tu-pie-de-pagina-donde-p
   width: 100%;
   height: 2.5rem; 
   color:var(--color-letra-pie); 
+
 }
 
 
@@ -109,3 +117,25 @@ https://www.freecodecamp.org/espanol/news/como-mantener-tu-pie-de-pagina-donde-p
   .footer-color li{
     list-style-type: none;
   }
+
+.btnReturn{
+  position: fixed; 
+  bottom: 10px; 
+  right: 10px;
+  padding: 5px; 
+  background-color: var(--first-cream); 
+  color: var(--first-grey-dark);
+  border: none; 
+  border-radius: 100%; 
+  cursor: pointer;
+  z-index:1000;
+  display: none;
+}
+  
+@media screen and (min-width: 768px){
+  #headerImg{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}

@@ -75,6 +75,15 @@
     color:white;
 }
 
+#msgSuccess{
+    height: 45px;
+    line-height: 45px;
+    padding: 0 15px;
+    border-radius: 3px;
+    background-color: green;
+    color:white;
+}
+
 .form__group-btn-submit{
     display: flex;
     flex-direction: column;

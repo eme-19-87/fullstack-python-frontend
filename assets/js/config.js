@@ -1,10 +1,23 @@
 window.addEventListener("load", ()=>{
 	insertarFavicon();
 	insertarFontAwesome();
-	insertarCssBoostrap();
-	insertarScriptBoostrap();
+	//insertarCssBoostrap();
+	//insertarScriptBoostrap();
 	insertarEstilos();
 	//alert("Entra");
+});
+
+window.addEventListener('scroll', function() {
+    var etiqueta = document.getElementById('btnReturn');
+    var posicionMitadPantalla = window.innerHeight / 2; // Calcula la posición de la mitad de la pantalla
+    var posicionScroll = window.scrollY; // Obtiene la posición del scroll vertical
+
+    // Si la posición del scroll es mayor o igual a la posición de la mitad de la pantalla, muestra la etiqueta
+    if (posicionScroll >= posicionMitadPantalla) {
+        etiqueta.style.display = 'block';
+    } else {
+        etiqueta.style.display = 'none'; // Oculta la etiqueta si no estamos a la mitad de la pantalla
+    }
 });
 
 window.addEventListener("close",()=>{
@@ -82,7 +95,7 @@ function insertarEstilos(){
 }
 
 function getProduct(category){
-	const url='/customCard.html?category='+category;
+	const url='customCard.html?category='+category;
 	window.location.href = url;
 }
 

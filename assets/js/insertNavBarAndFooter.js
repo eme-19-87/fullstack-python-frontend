@@ -11,7 +11,10 @@ window.addEventListener("load", () => {
   }
 
   insertFooter();
+  insertReturnButton();
   //alert("Entra");
+
+  
 });
 
 /**
@@ -28,13 +31,13 @@ function insertNavBar() {
   let imgContainer = document.createElement("div");
   headerContainer.setAttribute(
     "class",
-    "d-flex justify-content-center optionBar sticky-top"
+    "d-flex justify-content-center optionBar"
   );
   //crea los datos del contenedor de la imagen del logo
   imgContainer.innerHTML = `
       <div class='container d-lg-flex justify-content-center mt-3 mb-5'>
             <div class='row'>
-                  <div class='col-lg-5 col-md-12'>
+                  <div class='col-lg-5 col-md-12' id='headerImg'>
                         <img src='assets/img/logos/logo-8.png' class="img-fluid"/>
                   </div>
 
@@ -43,7 +46,7 @@ function insertNavBar() {
                        <div class="container ms-lg-5">
                           <div class="row ms-5 fw-bold">
                               <div class="col-7 col-sm-8">
-                              <a href="newResponsiveForm.html" class="bi bi-people-fill">
+                              <a href="registerForm.html" class="bi bi-people-fill">
                                     Registrarse
                               </a>
                               </div>
@@ -63,10 +66,10 @@ function insertNavBar() {
     `;
   //crea los datos de la barra de navegación
   headerContainer.innerHTML = `
-  <nav class="navbar sticky-top">
+  <nav class="navbar">
   <div class="container-fluid">
   <button class="btn d-lg-none hamburgerBtn" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbar" aria-controls="navbar">
-  <i class="fa-solid fa-bars"></i>
+  <i class="fa-solid fa-bars hamburguerIcon"></i>
 
 </button>
 <div class="offcanvas-lg offcanvas-end" tabindex="-1" id="navbar" aria-labelledby="offcanvasResponsiveLabel">
@@ -84,7 +87,7 @@ function insertNavBar() {
 
   
    <li class="nav-item dropdown">
-     <a class="nav-link dropdown-toggle" href="${pathProduct}"role="button" data-bs-toggle="dropdown" aria-expanded="false">
+     <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
        Productos
      </a>
      <ul class="dropdown-menu optionBar">
@@ -137,7 +140,7 @@ function insertFooter() {
       <h4>Comercialización</h4>
       <ul>
           <li>
-              <a href="">
+              <a href="aboutUs.html">
                   ¿Quienes Somos?
               </a>
               
@@ -149,7 +152,7 @@ function insertFooter() {
              
           </li>
           <li>
-              <a href="">
+              <a href="contactForm.html">
                   Contacto
               </a>
              
@@ -251,7 +254,25 @@ function insertNavBarAdmin() {
   header.append(headerContainer);
 }
 
+function insertReturnButton(){
+  let mainTag=document.getElementsByTagName('main')[0];
+  let button=document.createElement("div");
+  let arrowIcon=document.createElement("i");
 
+  button.addEventListener('click',(e)=>{
+    window.scrollTo(0, 0);
+  });
+
+  button.setAttribute('id','btnReturn');
+  arrowIcon.classList.add('fa-solid');
+  arrowIcon.classList.add('fa-arrow-up');
+  button.classList.add('btnReturn');
+  button.append(arrowIcon);
+  
+
+  //button.append(arrowIcon);
+  mainTag.append(button);
+}
 
 /*function getAbsolutePath() {
   /**

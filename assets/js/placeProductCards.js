@@ -81,7 +81,9 @@ function placeACard(data){
     cardButton.setAttribute("class","btn");
     cardButton.classList.add("class","btn--block");
     cardButton.classList.add("class","card__btn");
-    cartButton.setAttribute("class","cart-button bi bi-cart");
+    cartButton.setAttribute("class","cart-button");
+    cartButton.classList.add("class","fa-solid");
+    cartButton.classList.add("class","fa-cart-arrow-down");
     detailsContainer.setAttribute("class","details-container");
 
     cardTitle.innerHTML=data.nombre;
