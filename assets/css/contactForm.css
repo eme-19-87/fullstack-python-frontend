@@ -1,0 +1,138 @@
+.form-contact{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width:700px;
+    margin:auto;
+    margin-top:10px;
+    margin-bottom: 10px;
+    gap:10px;
+}
+
+.form-contact input, select{
+    width: 500px;
+}
+
+.form-contact label{
+    color:var(--first-dark);
+    text-align: center;
+}
+
+.btnSubmit{
+    padding:10px;
+    background-color: var(--first-dark);
+    color:var(--first-grey);
+}
+
+.titleRegister{
+    text-align: center;
+    width:300px;
+    margin:0 auto;
+}
+
+@media screen and (max-width:1440px){
+  .form-contact{
+    width: 1000px;
+  }
+
+  .form-contact input,
+    .form-contact select,
+    .form-contact textarea{
+      width: 900px;
+    }
+}
+
+@media screen and (max-width:1024px){
+  .form-contact{
+    width: 900px;
+  }
+
+  .form-contact input,
+    .form-contact select,
+    .form-contact textarea{
+      width: 800px;
+    }
+}
+
+@media only screen and (min-width: 780px) and (max-width: 1000px) {
+	.form-contact{
+    width: 700px;
+  }
+
+  .form-contact input,
+  .form-contact select,
+  .form-contact textarea{
+    width: 650px;
+  }
+}
+
+@media screen and (max-width:768px){
+  .form-contact{
+      width: 700px;
+    }
+  
+    .form-contact input,
+    .form-contact select,
+    .form-contact textarea{
+      width: 600px;
+    }
+}
+
+@media only screen and (min-width: 431px) and (max-width: 767px) {
+	.form-contact{
+    width: 400px;
+  }
+
+  .form-contact input,
+  .form-contact select,
+  .form-contact textarea{
+    width: 350px;
+  }
+}
+@media screen and (max-width:430px){
+  .form-contact{
+      width: 380px;
+    }
+  
+    .form-contact input,
+    .form-contact select,
+    .form-contact textarea{
+      width: 350px;
+    }
+}
+
+@media screen and (max-width:425px){
+    .form-contact{
+        width: 380px;
+      }
+    
+      .form-contact input,
+      .form-contact select,
+      .form-contact textarea{
+        width: 350px;
+      }
+}
+
+@media screen and (max-width:375px){
+    .form-contact{
+        width: 320px;
+      }
+    
+      .form-contact input,
+      .form-contact select,
+      .form-contact textarea{
+        width: 300px;
+      }
+}
+
+@media screen and (max-width:320px)  {
+    .form-contact{
+      width: 300px;
+    }
+  
+    .form-contact input,
+    .form-contact select,
+    .form-contact textarea{
+      width: 250px;
+    }
+}

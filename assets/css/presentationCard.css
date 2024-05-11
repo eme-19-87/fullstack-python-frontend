@@ -165,6 +165,7 @@
 
   #container-jumbotron{
     text-align: center;
+  
   }
 
   .jumbotron { 
@@ -199,6 +200,12 @@
     border-radius: 20px;
     display: inline-block;
     text-transform: uppercase;
+  }
+
+  .us_items{
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    gap:20px;
   }
 
   @media(max-width:320px){

@@ -39,14 +39,7 @@ window.addEventListener("load", ()=>{
 
 
 
-function setDatosIniciales(){
-    const categoryData=JSON.stringify({
-        EquipoMate:getEquiposMateData(),
-        Mate:getMates(),
-        categorias:['Equipo Matero','Mate']
-    });
-    localStorage.setItem("data", categoryData);
-}
+
 
 
 function placeCards(category="EquipoMate"){

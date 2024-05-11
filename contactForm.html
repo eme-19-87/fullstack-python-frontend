@@ -4,8 +4,8 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="./assets/css/cardStyle.css">
-    <link rel="stylesheet" href="./assets/css/newFormStyles.css">
+	<link rel="stylesheet" href="./assets/css/accordionCss.css">
+   <link rel="stylesheet" href="./assets/css/contactForm.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
@@ -19,69 +19,127 @@
 
 <body>
 	<main class="main">
-        <h2 class="titleRegister">Formulario De Contacto</h2>
-        <!--Etiqueta form principal-->
-		<form action="" class="form" id="form">
-            <!---Grupo para pedir un dato al usuario-->
-            <div class="form__group_column" id="name__group">
-                <label for="name" class="form__label">Nombre</label>
-                <div class="form__group-input">
-                    <input type="text" class="form__input" name="name" id="name">
-                    
-                    <!--<i class="form__validation-state bi bi-x-octagon"></i>-->
-                </div>
-
-            </div>
-
-
-              <!---Grupo para pedir un dato al usuario-->
-              <div class="form__group_column" id="email__group">
-                <label for="email" class="form__label">Email</label>
-                <div class="form__group-input">
-                    <input type="text" class="form__input" name="email" id="email">
-                    <!--<i class="form__validation-state bi bi-x-octagon"></i>-->
-                    <!--<small class="form__input-error email-error"></small>-->
-                </div>
-                </div>
-                
-
-                
-                 <!---Grupo para pedir un dato al usuario-->
-              <div class="form__group_column" id="email__group">
-                <label for="state" class="form__label">Motivo</label>
-                <div class="form__group-input">
-                    <div class="form_select">
-                        
-                    <select name="motive" id="motive">
-                        <option value="1">Queja</option>
-                        <option value="2">Consulta</option>
-                        <option value="3">Sugerencia</option>
-                        <option value="4">Otros</option>
-                    </select>
-                    </div>
-                </div>
-                </div>
-
-               
-                
-                
         
-           
+        <section class="accordion-set">
+            <h3>FAQS</h3>
+            <details>
+                <summary>
+                    ¿CUÁLES SON LAS FORMAS DE PAGO?
+                </summary>
+                <p>
+                    Podes realizar el pago con tarjeta de débito/crédito en hasta 3 cuotas sin interés con 
+                    cualquier tarjeta seleccionando MERCADOPAGO al momento del pago.
+                </p>
+            </details>
 
-           
+            <details>
+                <summary>
+                    ¿HACEN ENVIOS?
+                </summary>
+                <p>
+                    ¡Si!
+    ENVIOS EN ARGENTINA: Podes cotizar el valor con tu código postal, al abrir un producto en nuestra tienda online. Tenemos envíos express a domicilio en CABA .También, enviamos por OCA a todo el país.
+    ENVIOS INTERNACIONALES: Una vez hecha la compra por: www.mateandoshop.com se te enviará de forma 100% GRATIS tu envío por Fedex. El mate une fronteras :)
 
-                <div class="form__group_column">
-                    <label for="state" class="form__label">Mensaje</label>
-                    <textarea name="reclaim" id="reclaim" cols="50" rows="10" ></textarea>
-                </div>
-                    
-                 
+                </p>
+            </details>
+
+            <details>
+                <summary>
+                    ¿TODOS LOS MATES SON IGUALES?
+                </summary>
+                <p>
+                    ¡No todos! Debido a que el trabajo de todos nuestros mates es 100% artesanal, no existen dos unidades iguales. Además, en los mates de calabaza, al realizarse 
+                    sobre un fruto natural, los tamaños y formas varían constantemente.
+                </p>
+            </details>
+
+            <details>
+                <summary>
+                    ¿TIENE GARANTÍA MI MATE?
+                </summary>
+                <p>
+                    Tenemos 1 mes de garantía por FALLAS DE FÁBRICA notorias que impidan su uso. En caso de que esto ocurra, verificaremos el problema y trataremos de resolverlo lo antes posible. 
+La calabaza al ser un fruto natural, puede variar en tamaño y forma en todos los mates. El trabajo que conllevan nuestros mates es 100% artesanal, en el que se trata de lograr la perfección; siempre teniendo en cuenta que es realizado a mano y no por ninguna máquina.
+
+                </p>
+            </details>
+
+
+        </section>
        
-            <div class="form__group form__group-btn-submit">
-                <button type="submit" class="form__btn">Enviar</button>
-            </div>
+        <section>
+            <h2 class="titleRegister">Formulario De Contacto</h2>
+            <!--Etiqueta form principal-->
+            <form action="" class="form-contact" id="form">
+                <!---Grupo para pedir un dato al usuario-->
+                <div class="form__group_column" id="name__group">
+                    <label for="name" class="form__label">Nombre</label>
+                    <div class="form__group-input">
+                        <input type="text" class="form__input" name="name" id="name">
+                        
+                        <!--<i class="form__validation-state bi bi-x-octagon"></i>-->
+                    </div>
+    
+                </div>
+    
+    
+                  <!---Grupo para pedir un dato al usuario-->
+                  <div class="form__group_column" id="email__group">
+                    <label for="email" class="form__label">Email</label>
+                    <div class="form__group-input">
+                        <input type="text" class="form__input" name="email" id="email">
+                        <!--<i class="form__validation-state bi bi-x-octagon"></i>-->
+                        <!--<small class="form__input-error email-error"></small>-->
+                    </div>
+                    </div>
+                    
+    
+                    
+                     <!---Grupo para pedir un dato al usuario-->
+                  <div class="form__group_column" id="email__group">
+                    <label for="state" class="form__label">Motivo</label>
+                    <div class="form__group-input">
+                        <div class="form_select">
+                            
+                        <select name="motive" id="motive">
+                            <option value="1">Queja</option>
+                            <option value="2">Consulta</option>
+                            <option value="3">Sugerencia</option>
+                            <option value="4">Otros</option>
+                        </select>
+                        </div>
+                    </div>
+                    </div>
+    
+                   
+                    
+                    
+            
+               
+    
+               
+    
+                    <div class="form__group_column">
+                        <label for="state" class="form__label">Mensaje</label>
+                        <div>
+                            <textarea name="reclaim" id="reclaim" cols="50" rows="10" ></textarea>
+                        </div>
+                        
+                    </div>
+                        
+                     
+           
+                <div class="btn-submit">
+                    <button type="submit" class="btnSubmit">Enviar</button>
+                </div>
+    
+            </form>
 
-        </form>
+        </section>
+       
+   
+        
 	</main>
 	
 

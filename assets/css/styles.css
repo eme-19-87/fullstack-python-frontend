@@ -67,6 +67,7 @@ ul{
 .hamburgerBtn{
   background-color: var(--color-letra-navbar);
   color:var(--first-dark);
+  width:100%;
   
 }
 

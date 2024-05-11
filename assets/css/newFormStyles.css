@@ -9,6 +9,7 @@
     display:grid;
     grid-template-columns: 1fr 1fr;
     gap:20px;
+    
 }
 
 .form__label{
@@ -156,10 +157,43 @@ select{
         display: flex;
         flex-wrap: wrap;
         flex-direction: column;
+        
     }
 
+   
     .form__group_img{
         display: none;
     }
 
+   
+    
 }
+
+
+
+@media screen and (max-width:425px) {
+    
+    #avatar{
+        width:350px;
+    }
+}
+
+@media screen and (max-width:375px) {
+    
+    #avatar{
+        width:320px;
+    }
+}
+
+@media screen and (max-width:320px) {
+    
+    #avatar{
+        width:250px;
+    }
+    .main{
+        width:300px;
+    }
+  
+}
+
+

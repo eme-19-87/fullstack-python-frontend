@@ -280,9 +280,11 @@ function applyErrorToSubmit(msgError){
     containerElement.style.textAlign="center";
     containerElement.scrollIntoView({ behavior: 'smooth', block: 'start' });*/
     let errorUl=document.createElement('ul');
-    //recorro el arreglo de errores y voy creando un li para cada uno de ellos
+    
+    //filtro los campos que puedan estar en blanco
     msgError=msgError.filter((error)=>error!=='');
     console.log(msgError);
+    //recorro el arreglo de errores y voy creando un li para cada uno de ellos
     msgError.forEach((error)=>{
         let errorLi=document.createElement('li');
         errorLi.innerText=`${error}`;

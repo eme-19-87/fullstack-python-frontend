@@ -103,10 +103,17 @@ function insertNavBar() {
     
     </li>
     
-    
-   <li class="nav-item">
-   <a class="nav-link" aria-current="page" href="#">Info</a>
+    <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+      Info
+    </a>
+    <ul class="dropdown-menu optionBar">
+      <li><a href="aboutUs.html" class="dropdown-item" id="termo-mate">¿Quienes Somos?</a></li>
+      <li><a href="policy.html" class="dropdown-item" id="latas">Politica y Privacidad</a></li>
+    </ul>
+   
    </li>
+ 
 
  
  <li class="nav-item">
@@ -146,8 +153,8 @@ function insertFooter() {
               
           </li>
           <li>
-              <a href="">
-                  Politicas de privacidad
+              <a href="policy.html">
+                  Politicas
               </a>
              
           </li>

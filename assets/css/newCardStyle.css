@@ -1,0 +1,27 @@
+
+
+.cards-idiomas{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  height: 120px;
+  border-radius: 15px;
+  cursor: pointer;
+}
+
+
+/* VISTA QUIENES SOMOS  */
+
+.historia-instituto{
+  background-color:#F9B400;
+  color:black;
+  padding: 20px;
+  text-align: justify;
+  text-align: left;
+}
+.card-body{
+  background-color: #5E1A57;
+  color: black;
+}
+
+
