@@ -85,7 +85,7 @@
     }
 }
 
-@media screen and (max-width:425px){
+@media screen and (max-width:430px){
     .accordion-set{
         width:350px;
         margin:0 auto;

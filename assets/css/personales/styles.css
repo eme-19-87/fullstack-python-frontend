@@ -78,6 +78,8 @@ ul{
 
 .optionBar a{
   color:var(--color-letra-navbar);
+  cursor: pointer;
+  text-decoration: none;
  
   
 }
@@ -131,6 +133,82 @@ https://www.freecodecamp.org/espanol/news/como-mantener-tu-pie-de-pagina-donde-p
   cursor: pointer;
   z-index:1000;
   display: none;
+}
+
+
+/*
+Inicia código para controlar el iframe con el mapa de localización
+*/
+#googleMaps{
+  width:700px;
+  margin:0 auto;
+  margin-bottom:50px;
+  margin-top:50px;
+}
+
+#googleMaps div{
+  width:500px;
+  margin:0 auto;
+}
+#googleMaps iframe{
+  width: 500px;
+  margin:0 auto;
+}
+
+#googleMaps__title{
+ text-align: center;
+ 
+}
+
+/*
+Finaliza código para controlar el iframe con el mapa de localización
+*/
+
+hr{
+  /*color:var(--first-dark);*/
+
+  background-color: var(--first-cream)!important;
+  color:var(--first-dark)!important;
+  border:none;
+  height: 10px;
+}
+
+@media screen and (max-width: 320px){
+  #googleMaps{
+    width:300px;
+    margin:0 auto;
+  }
+  #googleMaps iframe,
+  #googleMaps div{
+    width: inherit;
+    margin:0 auto;
+  }
+
+
+  #googleMaps__title{
+    text-align: center;
+    width:inherit;
+    
+   }
+}
+
+@media only screen and (min-width: 360px) and (max-width: 700px){
+  #googleMaps{
+    width:320px;
+    margin:0 auto;
+  }
+  #googleMaps iframe,
+  #googleMaps div{
+    width: inherit;
+    margin:0 auto;
+  }
+
+
+  #googleMaps__title{
+    text-align: center;
+    width:inherit;
+    
+   }
 }
   
 @media screen and (min-width: 768px){

@@ -3,9 +3,9 @@
 <head id="head-metadata">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./assets/css/bootstrap.min.css">
-	<link rel="stylesheet" href="./assets/css/accordionCss.css">
-   <link rel="stylesheet" href="./assets/css/contactForm.css">
+    <link rel="stylesheet" href="./assets/css/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="./assets/css/personales/accordionCss.css">
+   <link rel="stylesheet" href="./assets/css/personales/contactForm.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
@@ -20,54 +20,19 @@
 <body>
 	<main class="main">
         
-        <section class="accordion-set">
-            <h3>FAQS</h3>
-            <details>
-                <summary>
-                    ¿CUÁLES SON LAS FORMAS DE PAGO?
-                </summary>
-                <p>
-                    Podes realizar el pago con tarjeta de débito/crédito en hasta 3 cuotas sin interés con 
-                    cualquier tarjeta seleccionando MERCADOPAGO al momento del pago.
-                </p>
-            </details>
-
-            <details>
-                <summary>
-                    ¿HACEN ENVIOS?
-                </summary>
-                <p>
-                    ¡Si!
-    ENVIOS EN ARGENTINA: Podes cotizar el valor con tu código postal, al abrir un producto en nuestra tienda online. Tenemos envíos express a domicilio en CABA .También, enviamos por OCA a todo el país.
-    ENVIOS INTERNACIONALES: Una vez hecha la compra por: www.mateandoshop.com se te enviará de forma 100% GRATIS tu envío por Fedex. El mate une fronteras :)
-
-                </p>
-            </details>
-
-            <details>
-                <summary>
-                    ¿TODOS LOS MATES SON IGUALES?
-                </summary>
-                <p>
-                    ¡No todos! Debido a que el trabajo de todos nuestros mates es 100% artesanal, no existen dos unidades iguales. Además, en los mates de calabaza, al realizarse 
-                    sobre un fruto natural, los tamaños y formas varían constantemente.
-                </p>
-            </details>
-
-            <details>
-                <summary>
-                    ¿TIENE GARANTÍA MI MATE?
-                </summary>
-                <p>
-                    Tenemos 1 mes de garantía por FALLAS DE FÁBRICA notorias que impidan su uso. En caso de que esto ocurra, verificaremos el problema y trataremos de resolverlo lo antes posible. 
-La calabaza al ser un fruto natural, puede variar en tamaño y forma en todos los mates. El trabajo que conllevan nuestros mates es 100% artesanal, en el que se trata de lograr la perfección; siempre teniendo en cuenta que es realizado a mano y no por ninguna máquina.
-
-                </p>
-            </details>
-
+       
+       
+        <section id="googleMaps">
+            
+                <h3 id="googleMaps__title">¿Dónde nos encontramos?</h3>
+                <div>
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d13307.446399768958!2d-55.89848614877764!3d-27.36808224391992!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9457bfcbf238e437%3A0xb57c862a36f7d82d!2sGaler%C3%ADa%20del%20Mate!5e0!3m2!1ses-419!2sar!4v1715453335598!5m2!1ses-419!2sar" 
+                    width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe> 
+                </div>
+              
 
         </section>
-       
+        <hr>
         <section>
             <h2 class="titleRegister">Formulario De Contacto</h2>
             <!--Etiqueta form principal-->
@@ -148,11 +113,13 @@ La calabaza al ser un fruto natural, puede variar en tamaño y forma en todos lo
 </footer>
 
 
-<script src="assets/js/insertNavBarAndFooter.js"></script>
-<script src="assets/js/config.js"></script>
-<script src="assets/js/bootstrap.bundle.min.js"></script>
+<script src="assets/js/personales/insertNavBarAndFooter.js"></script>
+<script src="assets/js/personales/config.js"></script>
+<script src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
 <script>
     window.addEventListener('load',()=>{
+        //cuando la pantalla se termine de cargar, moverá la pantalla un poco
+        //hacia abajo para centrarse en el contenido de la página
         window.scrollTo(0, 500);
     })
 </script>

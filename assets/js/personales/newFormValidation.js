@@ -10,7 +10,7 @@ window.addEventListener("load",()=>{
         const telephone=document.querySelector("[name=telephone]");
         const password=document.querySelector("[name=password]");
         const repeatPassword=document.querySelector("[name=password2]");
-
+        const avatar=document.querySelector("[name=avatar]");
         //Creo un arreglo donde almaceno todos los errores que se produzcan
         error=[];
         error.push(controlName(name));
@@ -19,6 +19,7 @@ window.addEventListener("load",()=>{
         error.push(controlTelephone(telephone));
         error.push(controlPassword(password));
         error.push(controlRepeatPassword(repeatPassword));
+        error.push(controlAvatar(avatar))
         //controlo que todos los errores sean vacíos
         const acum=("Acumulado: ",error.reduce((er,accum)=>{return accum+=er},""));
         
@@ -31,7 +32,15 @@ window.addEventListener("load",()=>{
         if(acum===""){
             applySuccessToSubmit();
         }else{
-           applyErrorToSubmit(error)
+            applyErrorToSubmit(error);
+            controlError('name-error','iconErrorName',name);
+            controlError('lastName-error','iconErrorLastName',lastName);
+            controlError('email-error','iconErrorEmail',email);
+            controlError('phone-error','iconErrorPhone',telephone);
+            controlError('password-error','iconErrorPassword',password);
+            controlError('password2-error','iconErrorPassword2',repeatPassword);
+            controlError('avatar-error','iconErrorAvatar',avatar);
+
         }
     
      })
@@ -49,7 +58,7 @@ function applyBlurEffect(){
     const telephone=document.querySelector("[name=telephone]");
     const password=document.querySelector("[name=password]");
     const repeatPassword=document.querySelector("[name=password2]");
-    
+    const avatar=document.querySelector("[name=avatar]");
 
     name.addEventListener("keyup",(e)=>{controlError('name-error','iconErrorName',e.target);});
     name.addEventListener("blur",(e)=>{controlError('name-error','iconErrorName',e.target);});
@@ -69,7 +78,7 @@ function applyBlurEffect(){
     repeatPassword.addEventListener("keyup",(e)=>{controlError('password2-error','iconErrorPassword2',e.target);});
     repeatPassword.addEventListener("blur",(e)=>{controlError('password2-error','iconErrorPassword2',e.target);});
     
-    
+    avatar.addEventListener("change",(e)=>{controlError('avatar-error','iconErrorAvatar',e.target);});
    
 }
 
@@ -83,7 +92,7 @@ function applyBlurEffect(){
 
 
 /**
- * 
+ * Controla los errores en el campo nombre
  * @param {HTMLInputElement} nameInput El input que registrará el nombre del usuario
  * @returns {String} retornará un string que será vacío en caso de que no haya errores
  */
@@ -99,7 +108,7 @@ function controlName(nameInput){
 }
 
 /**
- * 
+ * Controla los errores en el campo apellido
  * @param {HTMLInputElement} lastNameInput El input que registra el apellido del usuario
  * @returns {String} Retornará un string que será vacío en caso de error
  */
@@ -112,28 +121,55 @@ function controlLastName(lastNameInput){
     return errorMessage.trim();
 }
 
+/**
+ * Controla los errores en el campo email
+ * @param {HTMLInputElement} emailInput El input con los datos del email
+ * @returns {String} Retorna un string con el mensaje de error producido por el mail
+ */
 function controlEmail(emailInput){
     const emailRegex=/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
     const errorMessage=emailRegex.test(emailInput.value)?"":"Email Inválido";
     return errorMessage.trim();
 }
 
+/**
+ * Controla los errores en el campo teléfono
+ * @param {HTMLInputElement} phoneInput El input con los datos del teléfono
+ * @returns {String} Retorna un string con el error del teléfono
+ */
 function controlTelephone(phoneInput){
-    return onlyIntegers(phoneInput).replace('campo','teléfono');
+    let msgError=onlyIntegers(phoneInput);
+    return msgError!==''? msgError.replace('campo','teléfono'):msgError;
 }
 
+/**
+ * Controla los errores para la contraseña
+ * @param {HTMLInputElement} passwordInput El input con los datos de la contraseña
+ * @returns {String} Retorna un string con el error de la contraseña
+ */
 function controlPassword(passwordInput){
     const passRegex=/^.{8,64}$/;
     const errorMessage=passRegex.test(passwordInput.value)?"":"La contraseña debe contener un mínimo de 8 caracteres";
     return errorMessage.trim();
 }
 
+
+/**
+ * Controla los errores para la repetición de la contraseña
+ * @param {HTMLInputElement} repeatInput El input con los datos de la contraseña repetida
+ * @returns {String} Retorna un string con el error producido.
+ */
 function controlRepeatPassword(repeatInput){
     const password=document.querySelector("[name=password]");
     const errorMessage=password.value!==repeatInput.value?"Las constraseñas no coinciden":"";
     return errorMessage.trim();
 }
 
+/**
+ * Revisa que el campo tenga solamente letras
+ * @param {HTMLInputElement} dataInput El input con los datos que se controlarán
+ * @returns {String} Retorna un string con el
+ */
 function onlyLetters(dataInput){
     const onlyLetterRegex=/^[A-ZÁÉÍÓÚÑ]+$/i;
     const errorMessage=onlyLetterRegex.test(dataInput.value)?"":"El campo sólo debe contener letras";
@@ -146,11 +182,26 @@ function onlyIntegers(dataInput){
     return errorMessage.trim();
 }
 
+function controlAvatar(dataInput){
+    
+    var allowedExtensions = /(.jpg|.jpeg|.png|.gif)$/i;
+    let errorMessage='';
+    if(dataInput.files.length===0) errorMessage='Por favor, seleccione una imagen';
+    if(errorMessage==='' && !allowedExtensions.exec(dataInput.value)) errorMessage='Por favor, elija un archivo jpg, jpeg, png, gif';
+    return errorMessage;
+}
+
 //#################################################################
 //Fin de los controles para los campos
 //#################################################################
 
-
+/**
+ * 
+ * @param {String} tagName El nombre que tendrá la etiqueta de error para el input específico
+ * @param {String} iconName El nombre para el ícono de erorr
+ * @param {HTMLInputElement} htmlElement El input que podría tener el error
+ * @returns {String} Retorna un string con el error producido
+ */
 function controlError(tagName,iconName,htmlElement){
 
     let error="";
@@ -173,20 +224,21 @@ function controlError(tagName,iconName,htmlElement){
         case 'password2-error':
             error=controlRepeatPassword(htmlElement);
             break;
+        case 'avatar-error':
+            error=controlAvatar(htmlElement);
+            break;
         
     }
     
+    removeErrors(tagName,iconName);
     if(error!==""){
-        
         placerSpanError(htmlElement,error,tagName,iconName)
-    }else{
-        removeErrors(tagName,iconName);
-    
+        applyAnimation(tagName,"animate__flash");
     }
-     applyAnimation(tagName,"animate__flash");
    
      return error;
 }
+
 
 
 /**
@@ -194,6 +246,7 @@ function controlError(tagName,iconName,htmlElement){
  * @param {HTMLInputElement} htmlElement el elemento input al que se le agregará el efecto
  * @param {String} message El mensaje de error que se mostrará
  * @param {String} nameSpan El nombre del span de error al que se le aplicará el efecto
+ * @param {String} iconName El nombre de la etiqueta del ícono de error
  */
 function placerSpanError(htmlElement,message,nameSpan,iconName){
     console.log(nameSpan);
@@ -202,24 +255,32 @@ function placerSpanError(htmlElement,message,nameSpan,iconName){
     htmlElement.after(spanMessage);*/
     let errorElement=document.createElement("small");
     let iconError=document.createElement("i");
-    const errorTagExist=document.querySelector(`[name=${nameSpan}]`)
+    //const errorTagExist=document.querySelector(`[name=${nameSpan}]`)
     //Segunda forma
     //Parámetros de insertAdjacentHTML
     //beforeend, afterbegin, beforebegin,afterend
-    if(errorTagExist!==null){
-        removeErrors(nameSpan,iconName);
-    }else{
-        errorElement.classList.add("form__input-error");
-        errorElement.classList.add(`${nameSpan}`);
-        errorElement.setAttribute('name',nameSpan);
-        iconError.classList.add('form__validation-state');
-        iconError.classList.add('bi');
-        iconError.classList.add('bi-x-octagon');
-        iconError.setAttribute('name',iconName);
-        errorElement.innerHTML=message;
-        htmlElement.before(iconError);
-        htmlElement.after(errorElement);
-    }
+    errorElement.classList.add("form__input-error");
+    errorElement.classList.add(`${nameSpan}`);
+    errorElement.setAttribute('name',nameSpan);
+        //si no es el input del avatar, coloco un estilo particular
+        //esto lo hago así porque el ícono queda feo para la etiqueta de la imagen
+        if(nameSpan.indexOf('avatar')===-1){
+           
+            iconError.classList.add('form__validation-state');
+            iconError.classList.add('fa-regular');
+            iconError.classList.add('fa-circle-xmark');
+            iconError.setAttribute('name',iconName);
+            errorElement.innerHTML=message;
+            htmlElement.before(iconError);
+            htmlElement.after(errorElement);
+        }else{
+            errorElement.innerHTML=message;
+            htmlElement.after(errorElement);
+        }
+        
+     
+        
+    
         
     
   
@@ -238,11 +299,11 @@ function removeErrors(spanName,iconName){
     const iconElement= document.querySelector(`[name=${iconName}]`);
     let removed=false;
     //const iconElement=document.querySelector(`[name=${iconName}]`);
-    if (spanElement!==null && iconElement!==null){
+    if (spanElement!==null){
         spanElement.remove();
-        iconElement.remove();
         removed=true;
-    } 
+    }
+    if(iconElement!==null)iconElement.remove();
     return removed;
 }
 

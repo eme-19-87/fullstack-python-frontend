@@ -73,27 +73,27 @@ function insertarScriptBoostrap(){
 }
 
 function insertarEstilos(){
-	
+	const titleHTML=document.getElementsByTagName('title')[0];
 	let generalStyles = document.createElement("link");
 	let formStylesCss= document.createElement("link");
 	let cardStylesCss= document.createElement("link");
 	let animatedCss=document.createElement("link");
 	let footerStyle=document.createElement("link");
 	let head=document.getElementsByTagName("head")[0];
-	generalStyles.setAttribute("href","./assets/css/styles.css");
+	generalStyles.setAttribute("href","./assets/css/personales/styles.css");
 	generalStyles.setAttribute("rel","stylesheet");
-	formStylesCss.setAttribute("href","./assets/css/responsiveFormStyle1.css");
+	formStylesCss.setAttribute("href","./assets/css/personales/responsiveFormStyle1.css");
 	formStylesCss.setAttribute("rel","stylesheet");
-	cardStylesCss.setAttribute("href","./assets/css/cardStyle.css");
+	//cardStylesCss.setAttribute("href","./assets/css/personales/cardStyle.css");
 	cardStylesCss.setAttribute("rel","stylesheet");
-	footerStyle.setAttribute("href","./assets/css/responsiveFooter.css");
+	footerStyle.setAttribute("href","./assets/css/personales/responsiveFooter.css");
 	footerStyle.setAttribute("rel","stylesheet");
 	animatedCss.setAttribute("href","https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
 	animatedCss.setAttribute("rel","stylesheet");
-	head.append(footerStyle);
-	head.append(generalStyles);
-	head.append(cardStylesCss);
-	head.append(animatedCss);
+	head.insertBefore(footerStyle,titleHTML);
+	head.insertBefore(generalStyles,titleHTML);
+	head.insertBefore(cardStylesCss,titleHTML);
+	head.insertBefore(animatedCss, titleHTML);
 }
 
 function getProduct(category){
