@@ -4,6 +4,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="./assets/css/bootstrap/bootstrap.min.css">
+	<link rel="stylesheet" href="./assets/css/personales/carrouselCss.css">
 	<link rel="stylesheet" href="./assets/css/personales/anotherCardStyle.css">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -25,6 +26,31 @@
 
 	<main class="main">
 		
+		<div class="carrusel-box">
+			<div class="btn-left">
+				<i class="fa-solid fa-less-than"></i>
+			</div>
+			
+			<section class="container-carrusel">
+				
+				<div class="carruseles" id="slider">
+					<div class="slider-section" id="1"><img src="assets/img/banners/hotsale.png" alt=""></div>
+					<div  class="slider-section" id="2"><img src="assets/img/banners/banner2.jpeg" alt=""></div>
+					<div class="slider-section" id="3"><img  src="assets/img/banners/banner3.png" alt=""></div>
+					
+					
+				</div>
+				
+				
+		    </section>
+
+			<div class="btn-rigth">
+				<i class="fa-solid fa-greater-than"></i>
+			</div>
+	
+		</div>
+		
+		<br>
 		
 		  <section style="margin-top:25px;">
 			<h2 id="title-mas-vendidos" style="text-align: center;">Productos Más Vendidos</h2>
@@ -35,6 +61,8 @@
 				  </ul>
 			
 		  </section>
+
+		  
 		 
 	</main>
 	
@@ -47,12 +75,9 @@
 <script src="assets/js/personales/initialData.js"></script>
 <script src="assets/js/personales/config.js"></script>
 <script src="assets/js/personales/placeProductCards.js"></script>
+<script src="assets/js/personales/carrousel.js"></script>
 <script src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
-<script>
-    window.addEventListener('load',()=>{
-        window.scrollTo(0, 500);
-    })
-</script>
+
 <!--<script src="assets/js/alternatePaletteColor.js"></script>-->
 </body>
 </html>
