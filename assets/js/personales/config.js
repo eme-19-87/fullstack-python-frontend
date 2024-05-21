@@ -1,6 +1,6 @@
 window.addEventListener("load", ()=>{
 	//cargo los datos iniciales de los productos en caso que no existan
-	if (localStorage.getItem("data")===null) setDatosIniciales();
+	//if (localStorage.getItem("data")===null) setDatosIniciales();
 	insertarFavicon();
 	insertarFontAwesome();
 	//insertarCssBoostrap();

@@ -11,7 +11,8 @@ function placeCards(){
         'img':'assets/img/persona1.jpg'},
         {'nombre':'Karen','apellido':'Amarilla','nacimiento':'04/01/1994',
         'descripcion':'Soy estudiante del CBC en la Universidad de Buenos Aires, Tengo conocimientos básicos de Python y Java.'+
-        '<p>En mis tiempos libres me gusta leer novelas, anime y practicar Taekwondo.</p>','img':'assets/img/persona1.jpg'},
+        '<p>En mis tiempos libres me gusta leer novelas, anime y practicar Taekwondo.</p>',
+        'img':'assets/img/karen.jpg'},
         {'nombre':'Matías','apellido':'Cirigliano','nacimiento':'01/01/1995',
         'descripcion':'Datos Maty','img':'assets/img/persona1.jpg'},
 

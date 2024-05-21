@@ -11,6 +11,8 @@ window.addEventListener("load",()=>{
         const password=document.querySelector("[name=password]");
         const repeatPassword=document.querySelector("[name=password2]");
         const avatar=document.querySelector("[name=avatar]");
+        const terms=document.querySelector("[name=terms]");
+       
         //Creo un arreglo donde almaceno todos los errores que se produzcan
         error=[];
         error.push(controlName(name));
@@ -19,7 +21,8 @@ window.addEventListener("load",()=>{
         error.push(controlTelephone(telephone));
         error.push(controlPassword(password));
         error.push(controlRepeatPassword(repeatPassword));
-        error.push(controlAvatar(avatar))
+        error.push(controlAvatar(avatar));
+        error.push(terms.checked?'':'Acepte los términos y condiciones');
         //controlo que todos los errores sean vacíos
         const acum=("Acumulado: ",error.reduce((er,accum)=>{return accum+=er},""));
         
@@ -30,7 +33,8 @@ window.addEventListener("load",()=>{
 
         //si es vacío todos los errores, muestro el éxito
         if(acum===""){
-            applySuccessToSubmit();
+            applySuccessToSubmit(form);
+           
         }else{
             applyErrorToSubmit(error);
             controlError('name-error','iconErrorName',name);
@@ -40,11 +44,13 @@ window.addEventListener("load",()=>{
             controlError('password-error','iconErrorPassword',password);
             controlError('password2-error','iconErrorPassword2',repeatPassword);
             controlError('avatar-error','iconErrorAvatar',avatar);
+            controlError('terms-error','iconErrorTerms',terms);
 
         }
     
      })
-    applyBlurEffect();
+     applyBlurEffect();
+     form.reset();
 })
 
 //#################################################################
@@ -227,6 +233,8 @@ function controlError(tagName,iconName,htmlElement){
         case 'avatar-error':
             error=controlAvatar(htmlElement);
             break;
+        case 'terms-error':
+            error=htmlElement.checked?'':'Acepte los términos y condiciones'
         
     }
     
@@ -275,6 +283,7 @@ function placerSpanError(htmlElement,message,nameSpan,iconName){
             htmlElement.after(errorElement);
         }else{
             errorElement.innerHTML=message;
+            errorElement.style.display='block';
             htmlElement.after(errorElement);
         }
         
@@ -359,7 +368,7 @@ function applyErrorToSubmit(msgError){
 
 }
 
-function applySuccessToSubmit(){
+function applySuccessToSubmit(formRegister){
     /*const containerError=document.querySelector(`[id=msgError]`);
     if(containerError!==null) containerError.remove();
     let containerElement=document.createElement("div");
@@ -376,10 +385,20 @@ function applySuccessToSubmit(){
     containerElement.style.textAlign="center";
     containerElement.scrollIntoView({ behavior: 'smooth', block: 'start' });*/
     Swal.fire({
-        icon: "success",
-        title: "Todo Ok",
-        text: 'Los campos fueron completados satisfactoriamente',
+        title: "Formulario Correcto ¿Deseas enviarlo?",
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: "Enviar",
+        denyButtonText: `No Enviar`
+      }).then((result) => {
+        /* Read more about isConfirmed, isDenied below */
+        if (result.isConfirmed) {
+          formRegister.submit();
+          
+        } else if (result.isDenied) {
+          Swal.fire("Formulario no enviado", "", "info");
+        }
       });
-      console.log('success')
+      
 }
 

@@ -5,6 +5,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/personales/newFormStyles.css">
+    <link rel="stylesheet" href="./assets/css/personales/wheel.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
@@ -40,7 +41,8 @@
                     
                        <div class="form__group_img">
                         <img src="./assets/img/Logos/logo-8.png" 
-                            style="height: 300px; width:300px;"alt="">
+                            class='rueda' style="height: 300px; width:300px;"alt=""
+                            id="logoLogin">
 
                        </div>
                             
@@ -64,6 +66,18 @@
 
 </footer>
 
+<script>
+    let rueda=document.getElementById('logoLogin');
+        rueda.style.transform==='rotate(360deg)'?rueda.style.transform='rotate(-360deg)':rueda.style.transform='rotate(360deg)';
+        console.log(rueda.getAnimations());
+    function rotateLogo(){
+        let rueda=document.getElementById('logoLogin');
+        console.log(rueda.style.transform)
+        rueda.style.transform==='rotate(360deg)'?rueda.style.transform='rotate(-90deg)':rueda.style.transform='rotate(360deg)';
+        console.log(rueda.style.transform)
+    }
+    setInterval('rotateLogo()',5000);
+</script>
 <script src="assets/js/personales/insertNavBarAndFooter.js"></script>
 <script src="assets/js/personales/config.js"></script>
 <script src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>
