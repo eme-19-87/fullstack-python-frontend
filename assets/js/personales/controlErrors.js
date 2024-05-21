@@ -68,8 +68,11 @@ function controlDni(dniInput){
 
 
 
-export { onlyIntegers,
+export { 
+    onlyIntegers,
     onlyLetters,
     controlEmail,
     onlyIntegersNoNegative,
-    controlDni}
+    controlDni,
+    controlWhite
+}
