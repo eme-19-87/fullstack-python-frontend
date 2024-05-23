@@ -42,9 +42,18 @@ body{
   position: relative;
   min-height: 100vh;
   padding-bottom: 2.5rem;    
-  background-color:var(--color-fondo-general)!important;
+  /*background-color:var(--color-fondo-general)!important;*/
   font-family: "Space Grotesk", 'Times New Roman', Times, serif;
+  /*background: var(--first-grey);*/
+  /*background-image: url('../../img/banners/Banner_con_transparencia.png');*/
+  margin-top: 0;
     
+}
+
+main{
+  background-image: url('../../img/banners/Banner_con_transparencia.png');
+  background-color: transparent;
+  margin-top: 0;
 }
 a{
     cursor: pointer;
@@ -87,6 +96,18 @@ ul{
 .optionBar ul{
   background-color: var(--color-fondo-navbar);
   color:var(--color-letra-navbar);
+}
+
+/*
+--first-grey:#EEEDEB;
+  --first-cream:#E0CCBE;
+  --first-grey-dark:#747264;
+  --first-dark:#3C3633;
+*/
+#headerContainer{
+  /*background: linear-gradient(#747264, #E0CCBE);*/
+  
+  color:var(--first-dark);
 }
 
 .opcionesRegistro a{

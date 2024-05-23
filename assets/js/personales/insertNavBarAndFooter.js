@@ -29,13 +29,14 @@ function insertNavBar() {
   let header = document.getElementById("header");
   let headerContainer = document.createElement("div");
   let imgContainer = document.createElement("div");
+  imgContainer.setAttribute('id','headerContainer');
   headerContainer.setAttribute(
     "class",
     "d-flex justify-content-center optionBar"
   );
   //crea los datos del contenedor de la imagen del logo
   imgContainer.innerHTML = `
-      <div class='container d-lg-flex justify-content-center mt-3 mb-5'>
+      <div class='container d-lg-flex justify-content-center'>
             <div class='row'>
                   <div class='col-lg-5 col-md-12' id='headerImg'>
                         <img src='assets/img/logos/logo-8.png' class="img-fluid"/>

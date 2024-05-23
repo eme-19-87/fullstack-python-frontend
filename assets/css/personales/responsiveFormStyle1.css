@@ -19,6 +19,7 @@
     margin-top:0.5em;
     margin-bottom:0.5em;
     text-align: center;
+    
 
     
 }
@@ -28,7 +29,7 @@
     width:90%;
     max-width: 650px;
     border-radius: 10px;
-    background-color: var(--fondo-formulario);
+    background: linear-gradient(#747264, #E0CCBE);
     padding: 0.5em 3rem;
 }
 
