@@ -68,6 +68,7 @@ function placeACard(data){
     card.setAttribute('class','card');
     cardImg.setAttribute('class','card__image');
     cardImg.classList.add('class','card__image--fence');
+    cardImg.setAttribute('alt',data.nombre);
     cardContent.setAttribute('class','card__content');
     cardTitle.setAttribute('class','card_title');
     cardText.setAttribute("class","card__text");

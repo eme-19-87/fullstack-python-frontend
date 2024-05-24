@@ -1,11 +1,12 @@
-/*PEN STYLES*/
+/*Estilos para la tarjeta de presentación de los miembros del grupo que se encuentra en
+quienes somos*/
 
 * {
     box-sizing: border-box;
   }
   
   #us-information {
-    background: #f1f1f1;
+    background:transparent;
     font-size: 1rem;
     justify-content: center;
     align-items: center;

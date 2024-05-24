@@ -1,3 +1,7 @@
+/*
+Estilo para el carrusel
+*/
+
 .carrusel-box{
     display: flex;
     justify-content: center;

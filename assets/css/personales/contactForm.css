@@ -1,16 +1,25 @@
+/*
+Los estilos para el formulario de contacto
+*/
+
 .form-contact{
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width:700px;
+    max-width:1000px;
     margin:auto;
     margin-top:10px;
     margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
     gap:10px;
+    background: linear-gradient(var(--first-grey),var(--first-cream));
+    border-radius: 10px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 
 .form-contact input, select{
-    width: 500px;
+    width: 90%;
 }
 
 .form-contact label{
@@ -38,7 +47,7 @@
   .form-contact input,
     .form-contact select,
     .form-contact textarea{
-      width: 900px;
+      width: 850px;
     }
 }
 
@@ -50,7 +59,7 @@
   .form-contact input,
     .form-contact select,
     .form-contact textarea{
-      width: 800px;
+      width: 750px;
     }
 }
 
