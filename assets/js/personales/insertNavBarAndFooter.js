@@ -23,7 +23,7 @@ window.addEventListener("load", () => {
 function insertNavBar() {
   const pathHome = "index.html";
   const pathProduct = "productsView.html";
-  const catEquipoMate="EquipoMate";
+  const catEquipoMate="EquipoMatero";
   const catMate="Mate";
   const contact="contactForm.html";
   let header = document.getElementById("header");

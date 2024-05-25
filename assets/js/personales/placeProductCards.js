@@ -42,12 +42,16 @@ window.addEventListener("load", ()=>{
 
 
 
-function placeCards(category="EquipoMate"){
+function placeCards(category="EquipoMatero"){
 
     const categoryData=JSON.parse(localStorage.getItem("data"));
 
-    
-    categoryData[category].forEach((data)=>{
+    const dataToShow=categoryData.datos.filter((data)=>{
+        return data.categoria===category;
+    })
+
+    dataToShow.forEach((data)=>{
+        
         placeACard(data);
     })
 }
@@ -82,7 +86,8 @@ function placeACard(data){
 
     cardTitle.innerHTML=data.nombre;
     cardText.innerHTML=data.precio;
-    cardImg.setAttribute('src', "data:image/jpg;base64," + data.rutaImg);
+    //cardImg.setAttribute('src', "data:image/jpg;base64," + data.rutaImg);
+    cardImg.setAttribute('src','assets/img/'+data.rutaImg);
     cardButton.innerText="Detalles";
     cartButton.innerHTML="Agregar";
     card.append(cardImg);
