@@ -41,7 +41,7 @@ window.addEventListener("load",()=>{
             applySuccessToSubmit(form);
            
         }else{
-            applyErrorToSubmit(error);
+            //applyErrorToSubmit(error);
             controlError('name-error','iconErrorName',name);
             controlError('lastName-error','iconErrorLastName',lastName);
             controlError('email-error','iconErrorEmail',email);
@@ -73,6 +73,10 @@ function applyBlurEffect(){
     const password=document.querySelector("[name=password]");
     const repeatPassword=document.querySelector("[name=password2]");
     const avatar=document.querySelector("[name=avatar]");
+    const sex=document.querySelectorAll("[name=genre]");
+    const state=document.querySelector("[name=state]");
+    const terms=document.querySelector("[name=terms]");
+    
 
     name.addEventListener("keyup",(e)=>{controlError('name-error','iconErrorName',e.target);});
     name.addEventListener("blur",(e)=>{controlError('name-error','iconErrorName',e.target);});
@@ -94,6 +98,23 @@ function applyBlurEffect(){
     
     avatar.addEventListener("change",(e)=>{controlError('avatar-error','iconErrorAvatar',e.target);});
    
+    //Le aplico a cada botón para que revise si hay un error al momento
+    //De hacer click.
+    sex.forEach((sexButton)=>{
+        sexButton.addEventListener("click",(e)=>{
+            controlError('sex-error','iconErrorSex',sex);
+        });
+    });
+    
+    
+
+    state.addEventListener("change",(e)=>{
+        controlError('state-error','iconErrorState',state); 
+    });
+
+    terms.addEventListener("click",(e)=>{
+        controlError('terms-error','iconErrorTerms',terms);
+    });
 }
 
 //#################################################################
@@ -208,8 +229,6 @@ function controlAvatar(dataInput){
 function controlSex(dataInput){
     let msg='';
     msg=dataInput===undefined?'Seleccione un sexo por favor':'';
-    console.log("msg",msg.length);
-    console.log(dataInput.length);
     if(msg.length===0){
         msg='Seleccione un sexo por favor';
         for (let i = 0; i < dataInput.length; i++){ 
@@ -227,7 +246,6 @@ function controlState(dataInput){
     let msg='';
     let valueState=parseInt(dataInput.value);
     if(isNaN(valueState) || valueState<1) msg='Seleccione una provincia';
-    console.log("State error",valueState);
     return msg;
 
 }
@@ -381,7 +399,6 @@ function applyErrorToSubmit(msgError){
     
     //filtro los campos que puedan estar en blanco
     msgError=msgError.filter((error)=>error!=='');
-    console.log(msgError);
     //recorro el arreglo de errores y voy creando un li para cada uno de ellos
     msgError.forEach((error)=>{
         let errorLi=document.createElement('li');
