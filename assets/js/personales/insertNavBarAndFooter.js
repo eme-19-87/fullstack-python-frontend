@@ -32,7 +32,7 @@ function insertNavBar() {
   imgContainer.setAttribute('id','headerContainer');
   headerContainer.setAttribute(
     "class",
-    "d-flex justify-content-center optionBar"
+    "d-flex justify-content-center optionBar mt-5"
   );
   //crea los datos del contenedor de la imagen del logo
   imgContainer.innerHTML = `
