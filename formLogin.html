@@ -5,21 +5,25 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="./assets/css/bootstrap/bootstrap.min.css">
     <link rel="stylesheet" href="./assets/css/personales/newFormStyles.css">
+    <link rel="stylesheet" href="./assets/css/personales/wheel.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap" rel="stylesheet">
 	<title>Login</title>
 </head>
-<header id="header">
-	
-</header>
+
 
 
 <body>
+
+    <header id="header">
+	
+    </header>
+
 	<main class="main">
-        <h2 class="titleRegister">Iniciar Sesión</h2>
+        <h1 class="titleRegister">Iniciar Sesión</h1>
         <!--Etiqueta form principal-->
-		<form action="" class="form" id="form">
+		<form action="formLogin.html" class="form" id="form">
            
 
               <!---Grupo para pedir un dato al usuario-->
@@ -30,7 +34,7 @@
                     <!--<i class="form__validation-state bi bi-x-octagon"></i>-->
                     <!--<small class="form__input-error email-error"></small>-->
                 </div>
-                <label for="state" class="form__label">Contraseña</label>
+                <label for="password" class="form__label">Contraseña</label>
                 <div class="form__group-input">
                     <input type="password" class="form__input" name="password" id="password">
                 </div>
@@ -39,8 +43,9 @@
                 <div class="form__group">
                     
                        <div class="form__group_img">
-                        <img src="./assets/img/Logos/logo-8.png" 
-                            style="height: 300px; width:300px;"alt="">
+                        <img src="./assets/img/Logos/logo-12.svg" 
+                            class='rueda' style="height: 300px; width:300px;" alt="Logo de la empresa"
+                            id="logoLogin">
 
                        </div>
                             
@@ -64,6 +69,9 @@
 
 </footer>
 
+<script>
+   
+</script>
 <script src="assets/js/personales/insertNavBarAndFooter.js"></script>
 <script src="assets/js/personales/config.js"></script>
 <script src="assets/js/bootstrap/bootstrap.bundle.min.js"></script>

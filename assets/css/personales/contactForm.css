@@ -1,16 +1,25 @@
+/*
+Los estilos para el formulario de contacto
+*/
+
 .form-contact{
     display: flex;
     flex-direction: column;
     align-items: center;
-    max-width:700px;
+    max-width:1000px;
     margin:auto;
     margin-top:10px;
     margin-bottom: 10px;
+    width: 100%;
+    padding: 10px;
     gap:10px;
+    background: linear-gradient(var(--first-grey),var(--first-cream));
+    border-radius: 10px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
 }
 
 .form-contact input, select{
-    width: 500px;
+    width: 90%;
 }
 
 .form-contact label{
@@ -30,6 +39,8 @@
     margin:0 auto;
 }
 
+
+
 @media screen and (max-width:1440px){
   .form-contact{
     width: 1000px;
@@ -37,8 +48,9 @@
 
   .form-contact input,
     .form-contact select,
-    .form-contact textarea{
-      width: 900px;
+    .form-contact textarea,
+    #googleMaps{
+      width: 850px;
     }
 }
 
@@ -49,8 +61,9 @@
 
   .form-contact input,
     .form-contact select,
-    .form-contact textarea{
-      width: 800px;
+    .form-contact textarea,
+    #googleMaps{
+      width: 750px;
     }
 }
 
@@ -61,7 +74,8 @@
 
   .form-contact input,
   .form-contact select,
-  .form-contact textarea{
+  .form-contact textarea,
+  #googleMaps{
     width: 650px;
   }
 }
@@ -73,66 +87,82 @@
   
     .form-contact input,
     .form-contact select,
-    .form-contact textarea{
+    .form-contact textarea,
+    #googleMaps{
       width: 600px;
     }
 }
 
-@media only screen and (min-width: 431px) and (max-width: 767px) {
+@media only screen and (min-width: 551px) and (max-width: 767px) {
 	.form-contact{
-    width: 400px;
+    width: 95%;
+  }
+  
+
+  .form-contact input,
+  .form-contact select,
+  .form-contact textarea,
+  #googleMaps{
+    width: 500px;
+  }
+  #googleMaps div,
+  #googleMaps iframe{
+    width:100%!important;
+  }
+}
+
+@media only screen and (min-width: 431px) and (max-width: 550px) {
+	.form-contact{
+    width: 95%;
   }
 
   .form-contact input,
   .form-contact select,
-  .form-contact textarea{
-    width: 350px;
+  .form-contact textarea,
+  #googleMaps{
+    width: 400px!important;
+  
+  }
+  #googleMaps div,
+  #googleMaps iframe{
+    width:100%!important;
   }
 }
-@media screen and (max-width:430px){
-  .form-contact{
-      width: 380px;
-    }
+
+@media only screen and (min-width: 400px) and (max-width: 430px) {
+
+	.form-contact{
+    width: 380px;
+  }
+
+  .form-contact input,
+  .form-contact select,
+  .form-contact textarea,
+  #googleMaps{
+    width: 350px!important;
   
-    .form-contact input,
-    .form-contact select,
-    .form-contact textarea{
-      width: 350px;
-    }
+  }
+
+  #googleMaps div,
+  #googleMaps iframe{
+    width:100%!important;
+  }
 }
 
-@media screen and (max-width:425px){
-    .form-contact{
-        width: 380px;
-      }
-    
-      .form-contact input,
-      .form-contact select,
-      .form-contact textarea{
-        width: 350px;
-      }
-}
+@media only screen and (min-width: 320px) and (max-width: 400px) {
+	.form-contact{
+    width: 320px;
+  }
 
-@media screen and (max-width:375px){
-    .form-contact{
-        width: 320px;
-      }
-    
-      .form-contact input,
-      .form-contact select,
-      .form-contact textarea{
-        width: 300px;
-      }
-}
+  .form-contact input,
+  .form-contact select,
+  .form-contact textarea,
+  #googleMaps{
+    width: 280px!important;
+  }
 
-@media screen and (max-width:320px)  {
-    .form-contact{
-      width: 300px;
-    }
-  
-    .form-contact input,
-    .form-contact select,
-    .form-contact textarea{
-      width: 250px;
-    }
+  #googleMaps div,
+  #googleMaps iframe{
+    width:100%!important;
+  }
 }

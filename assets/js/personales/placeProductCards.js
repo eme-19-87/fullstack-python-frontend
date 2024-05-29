@@ -21,7 +21,7 @@ window.addEventListener("load", ()=>{
         Posición 1: Mate
         Me quedo con la posición 1 y, entonces, recupero los productos de la categoría Mate
         */
-       console.log(window.location.href.split('?').length>1);
+       
         if(window.location.href.split('?').length>1){
             category=window.location.href.split('?')[1].split('=')[1];
             placeCards(category);
@@ -42,12 +42,16 @@ window.addEventListener("load", ()=>{
 
 
 
-function placeCards(category="EquipoMate"){
+function placeCards(category="EquipoMatero"){
 
     const categoryData=JSON.parse(localStorage.getItem("data"));
 
-    
-    categoryData[category].forEach((data)=>{
+    const dataToShow=categoryData.datos.filter((data)=>{
+        return data.categoria===category;
+    })
+
+    dataToShow.forEach((data)=>{
+        
         placeACard(data);
     })
 }
@@ -68,6 +72,7 @@ function placeACard(data){
     card.setAttribute('class','card');
     cardImg.setAttribute('class','card__image');
     cardImg.classList.add('class','card__image--fence');
+    cardImg.setAttribute('alt',data.nombre);
     cardContent.setAttribute('class','card__content');
     cardTitle.setAttribute('class','card_title');
     cardText.setAttribute("class","card__text");
@@ -81,7 +86,8 @@ function placeACard(data){
 
     cardTitle.innerHTML=data.nombre;
     cardText.innerHTML=data.precio;
-    cardImg.setAttribute('src', "data:image/jpg;base64," + data.rutaImg);
+    //cardImg.setAttribute('src', "data:image/jpg;base64," + data.rutaImg);
+    cardImg.setAttribute('src','assets/img/'+data.rutaImg);
     cardButton.innerText="Detalles";
     cartButton.innerHTML="Agregar";
     card.append(cardImg);

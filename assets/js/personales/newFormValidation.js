@@ -11,6 +11,11 @@ window.addEventListener("load",()=>{
         const password=document.querySelector("[name=password]");
         const repeatPassword=document.querySelector("[name=password2]");
         const avatar=document.querySelector("[name=avatar]");
+        const terms=document.querySelector("[name=terms]");
+        const sex=document.querySelectorAll("[name=genre]");
+        const state=document.querySelector("[name=state]");
+        
+       
         //Creo un arreglo donde almaceno todos los errores que se produzcan
         error=[];
         error.push(controlName(name));
@@ -19,7 +24,10 @@ window.addEventListener("load",()=>{
         error.push(controlTelephone(telephone));
         error.push(controlPassword(password));
         error.push(controlRepeatPassword(repeatPassword));
-        error.push(controlAvatar(avatar))
+        error.push(controlSex(sex));
+        error.push(controlAvatar(avatar));
+        error.push(controlState(state));
+        error.push(terms.checked?'':'Acepte los términos y condiciones');
         //controlo que todos los errores sean vacíos
         const acum=("Acumulado: ",error.reduce((er,accum)=>{return accum+=er},""));
         
@@ -30,21 +38,27 @@ window.addEventListener("load",()=>{
 
         //si es vacío todos los errores, muestro el éxito
         if(acum===""){
-            applySuccessToSubmit();
+            applySuccessToSubmit(form);
+           
         }else{
-            applyErrorToSubmit(error);
+            //applyErrorToSubmit(error);
             controlError('name-error','iconErrorName',name);
             controlError('lastName-error','iconErrorLastName',lastName);
             controlError('email-error','iconErrorEmail',email);
             controlError('phone-error','iconErrorPhone',telephone);
             controlError('password-error','iconErrorPassword',password);
             controlError('password2-error','iconErrorPassword2',repeatPassword);
+            controlError('sex-error','iconErrorSex',sex);
             controlError('avatar-error','iconErrorAvatar',avatar);
+            controlError('state-error','iconErrorState',state);
+            controlError('terms-error','iconErrorTerms',terms);
+
 
         }
     
      })
-    applyBlurEffect();
+     applyBlurEffect();
+     form.reset();
 })
 
 //#################################################################
@@ -59,6 +73,10 @@ function applyBlurEffect(){
     const password=document.querySelector("[name=password]");
     const repeatPassword=document.querySelector("[name=password2]");
     const avatar=document.querySelector("[name=avatar]");
+    const sex=document.querySelectorAll("[name=genre]");
+    const state=document.querySelector("[name=state]");
+    const terms=document.querySelector("[name=terms]");
+    
 
     name.addEventListener("keyup",(e)=>{controlError('name-error','iconErrorName',e.target);});
     name.addEventListener("blur",(e)=>{controlError('name-error','iconErrorName',e.target);});
@@ -80,6 +98,23 @@ function applyBlurEffect(){
     
     avatar.addEventListener("change",(e)=>{controlError('avatar-error','iconErrorAvatar',e.target);});
    
+    //Le aplico a cada botón para que revise si hay un error al momento
+    //De hacer click.
+    sex.forEach((sexButton)=>{
+        sexButton.addEventListener("click",(e)=>{
+            controlError('sex-error','iconErrorSex',sex);
+        });
+    });
+    
+    
+
+    state.addEventListener("change",(e)=>{
+        controlError('state-error','iconErrorState',state); 
+    });
+
+    terms.addEventListener("click",(e)=>{
+        controlError('terms-error','iconErrorTerms',terms);
+    });
 }
 
 //#################################################################
@@ -191,6 +226,30 @@ function controlAvatar(dataInput){
     return errorMessage;
 }
 
+function controlSex(dataInput){
+    let msg='';
+    msg=dataInput===undefined?'Seleccione un sexo por favor':'';
+    if(msg.length===0){
+        msg='Seleccione un sexo por favor';
+        for (let i = 0; i < dataInput.length; i++){ 
+            
+            if (dataInput[i].checked) {
+               msg='';
+               break;
+           }
+        } 
+    }
+    return msg;
+}
+
+function controlState(dataInput){
+    let msg='';
+    let valueState=parseInt(dataInput.value);
+    if(isNaN(valueState) || valueState<1) msg='Seleccione una provincia';
+    return msg;
+
+}
+
 //#################################################################
 //Fin de los controles para los campos
 //#################################################################
@@ -227,6 +286,14 @@ function controlError(tagName,iconName,htmlElement){
         case 'avatar-error':
             error=controlAvatar(htmlElement);
             break;
+        case 'sex-error':
+            error=controlSex(htmlElement);
+            break;
+        case 'state-error':
+                error=controlState(htmlElement);
+                break;
+        case 'terms-error':
+            error=htmlElement.checked?'':'Acepte los términos y condiciones'
         
     }
     
@@ -249,11 +316,11 @@ function controlError(tagName,iconName,htmlElement){
  * @param {String} iconName El nombre de la etiqueta del ícono de error
  */
 function placerSpanError(htmlElement,message,nameSpan,iconName){
-    console.log(nameSpan);
+ 
     /*const spanMessage=document.createElement("span");
     spanMessage.innerHTML=message;
     htmlElement.after(spanMessage);*/
-    let errorElement=document.createElement("small");
+    let errorElement=document.getElementById(nameSpan);
     let iconError=document.createElement("i");
     //const errorTagExist=document.querySelector(`[name=${nameSpan}]`)
     //Segunda forma
@@ -264,28 +331,16 @@ function placerSpanError(htmlElement,message,nameSpan,iconName){
     errorElement.setAttribute('name',nameSpan);
         //si no es el input del avatar, coloco un estilo particular
         //esto lo hago así porque el ícono queda feo para la etiqueta de la imagen
-        if(nameSpan.indexOf('avatar')===-1){
+       
            
             iconError.classList.add('form__validation-state');
             iconError.classList.add('fa-regular');
             iconError.classList.add('fa-circle-xmark');
             iconError.setAttribute('name',iconName);
             errorElement.innerHTML=message;
-            htmlElement.before(iconError);
-            htmlElement.after(errorElement);
-        }else{
-            errorElement.innerHTML=message;
-            htmlElement.after(errorElement);
-        }
-        
-     
-        
-    
-        
-    
-  
-      
-    
+            if(htmlElement.type==='INPUT') htmlElement.before(iconError);
+            //htmlElement.after(errorElement);
+            
  
 }
 
@@ -300,7 +355,7 @@ function removeErrors(spanName,iconName){
     let removed=false;
     //const iconElement=document.querySelector(`[name=${iconName}]`);
     if (spanElement!==null){
-        spanElement.remove();
+        spanElement.innerText='';
         removed=true;
     }
     if(iconElement!==null)iconElement.remove();
@@ -344,7 +399,6 @@ function applyErrorToSubmit(msgError){
     
     //filtro los campos que puedan estar en blanco
     msgError=msgError.filter((error)=>error!=='');
-    console.log(msgError);
     //recorro el arreglo de errores y voy creando un li para cada uno de ellos
     msgError.forEach((error)=>{
         let errorLi=document.createElement('li');
@@ -359,7 +413,7 @@ function applyErrorToSubmit(msgError){
 
 }
 
-function applySuccessToSubmit(){
+async function applySuccessToSubmit(formRegister){
     /*const containerError=document.querySelector(`[id=msgError]`);
     if(containerError!==null) containerError.remove();
     let containerElement=document.createElement("div");
@@ -375,11 +429,36 @@ function applySuccessToSubmit(){
     form.before(containerElement);
     containerElement.style.textAlign="center";
     containerElement.scrollIntoView({ behavior: 'smooth', block: 'start' });*/
-    Swal.fire({
-        icon: "success",
-        title: "Todo Ok",
-        text: 'Los campos fueron completados satisfactoriamente',
+    /*Swal.fire({
+        title: "Formulario Correcto ¿Deseas enviarlo?",
+        showDenyButton: true,
+        showCancelButton: true,
+        confirmButtonText: "Enviar",
+        denyButtonText: `No Enviar`
+      }).then((result) => {
+       
+        if (result.isConfirmed) {
+          formRegister.submit();
+          
+        } else if (result.isDenied) {
+          Swal.fire("Formulario no enviado", "", "info");
+        }
+      });*/
+
+      const { value: url } = await Swal.fire({
+        title:'Formulario Comprobado',
+        text:'¿Desea enviarlo a formfree? Coloque la url',
+        icon:'success',
+        showCancelButton:true,
+        input: "url",
+        inputLabel: "URL address",
+        inputPlaceholder: "Enter the URL"
       });
-      console.log('success')
+      if (url) {
+        const form=document.querySelector('#form')
+        form.setAttribute('action',url);
+        formRegister.submit();
+      }
+      
 }
 

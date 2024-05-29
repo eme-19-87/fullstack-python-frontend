@@ -1,96 +1,78 @@
-//#################################################################
-//Inicio de los controles para los campos
-//#################################################################
+/**
+ * Controla si el valor de input está vacío
+ * @param {HTMLInputElement} dataInput El input con los datos que se verificará si está en blanco
+ * @returns {String} Retorna un string con el mensaje de error producido. Vacío en caso contrario
+ */
+function controlWhite(dataInput){
+    const errorMessage=dataInput.value.length===0?"Datos vacíos":"";
+    return errorMessage.trim();
+}
+
 
 
 /**
- * 
- * @param {String} nameInput El contenido del input que registrará el nombre del usuario
- * @returns {String} retornará un string que será vacío en caso de que no haya errores
+ * Comprueba si los datos del input son sólamente letras
+ * @param {HTMLInputElement} dataInput El elemento input que contendrá el dato que vamos a controlar
+ * @returns {String} Retorna un string con el código de error. En caso de que no haya, será vacío
  */
-function controlName(nameInput){
-    $errorMessage="";
-    if(nameInput.value.length===0) $errorMessage="Coloque un nombre por favor";
-    if(nameInput.value.length<=3 && $errorMessage==="") $errorMessage="El nombre debe tener mínimo 3 caracteres";
-
-    return $errorMessage.trim();
-
+function onlyLetters(dataInput){
+    const onlyLetterRegex=/^[A-ZÁÉÍÓÚÑ]+$/i;
+    const errorMessage=onlyLetterRegex.test(dataInput.value)?"":"El campo sólo debe contener letras";
+    return errorMessage.trim();
 }
 
 /**
- * 
- * @param {String} lastNameInput El contenido del input que registra el apellido del usuario
- * @returns {String} Retornará un string que será vacío en caso de error
+ * Comprueba si el valor de un input es entero
+ * @param {HTMLInputElement} dataInput El elemento input que contendrá el dato que vamos a controlar
+ * @returns {String} Retorna un string con el código de error. En caso de que no haya, será vacío
  */
-function controlLastName(lastNameInput){
-
-    $errorMessage="";
-    if(lastNameInput.value.length===0) $errorMessage="No deje el apellido en blanco";
-    if(lastNameInput.value.length<=3 && $errorMessage==="") $errorMessage="El apellido debe tener mínimo 3 caracteres";
-
-    return $errorMessage.trim();
-}
-//#################################################################
-//Fin de los controles para los campos
-//#################################################################
-
-
-/**
- * 
- * @param {HTMLInputElement} htmlElement el elemento input al que se le agregará el efecto
- * @param {String} message El mensaje de error que se mostrará
- * @param {String} nameSpan El nombre del span de error al que se le aplicará el efecto
- */
-function placerSpanError(htmlElement,message,nameSpan,iconName){
-    /*const spanMessage=document.createElement("span");
-    spanMessage.innerHTML=message;
-    htmlElement.after(spanMessage);*/
-    let errorElement=document.createElement("small");
-    let iconError=document.createElement("i")
-    //Segunda forma
-    //Parámetros de insertAdjacentHTML
-    //beforeend, afterbegin, beforebegin,afterend
-    removeErrors(nameSpan,iconName);
-    errorElement.classList.add("form__input-error");
-    errorElement.classList.add(`${nameSpan}`);
-    errorElement.setAttribute('name',nameSpan);
-    iconError.classList.add('form__validation-state');
-    iconError.classList.add('bi');
-    iconError.classList.add('bi-x-octagon');
-    iconError.setAttribute('name',iconName);
-    errorElement.innerHTML=message;
-    htmlElement.before(iconError);
-    htmlElement.after(errorElement);
+function onlyIntegers(dataInput){
+    const value=parseInt(dataInput.value);
+    const errorMessage=isNaN(value)?"El valor debe ser un entero":"";
+    return errorMessage.trim();
 }
 
 /**
- * 
- * @param {String} spanName El nombre de la etiqueta que tiene el mensaje de error
- * @param {String} iconName El nombre del ícono que muestra el mensaje de error
+ * Comprueba si el valor de un input es numérico no negativo
+ * @param {HTMLInputElement} dataInput El elemento input que contendrá el dato que vamos a controlar
+ * @returns {String} Retorna un string con el código de error. En caso de que no haya, será vacío
  */
-function removeErrors(spanName,iconName){
-    const spanElement=document.querySelector(`[name=${spanName}]`);
-    const iconElement= document.querySelector(`[name=${iconName}]`);
-    //const iconElement=document.querySelector(`[name=${iconName}]`);
-    if (spanElement!==null && iconElement!==null){
-        spanElement.remove();
-        iconElement.remove();
-    } 
+function onlyIntegersNoNegative(dataInput){
+    const value=parseInt(dataInput.value);
+    let errorMessage=isNaN(value)?"El valor debe ser un entero":"";
+    errorMessage=='' && value<0?"El valor debe ser mayor a cero":"";
+    return errorMessage.trim();
 }
 
 /**
- * 
- * @param {String} nameSpan El nombre de la etiqueta que muestra el error
- * @param {String} animation El nombre de la animación que se colocará a la etiqueta
+ * Controla los errores en el campo email
+ * @param {HTMLInputElement} emailInput El input con los datos del email
+ * @returns {String} Retorna un string con el mensaje de error producido por el mail
  */
-function applyAnimation(nameSpan,animation){
-    errorSpan=document.querySelector(`[name=${nameSpan}]`);
-    if (errorSpan!==null){
-      
-            errorSpan.classList.add("animate__animated");
-            errorSpan.classList.add(`${animation}`);
-    }
-   
+function controlEmail(emailInput){
+    const emailRegex=/^(([^<>()[\]\.,;:\s@\"]+(\.[^<>()[\]\.,;:\s@\"]+)*)|(\".+\"))@(([^<>()[\]\.,;:\s@\"]+\.)+[^<>()[\]\.,;:\s@\"]{2,})$/i;
+    const errorMessage=emailRegex.test(emailInput.value)?"":"Email Inválido";
+    return errorMessage.trim();
 }
 
-export default controlName;
+/**
+ * Controla si el valor de input cumple las condiciones de un dni
+ * @param {HTMLInputElement} dnilInput El input con los datos del email
+ * @returns {String} Retorna un string con el mensaje de error producido por el mail
+ */
+function controlDni(dniInput){
+    const dniRegex=/^[0-9]{2}\.?[0-9]{3,3}\.?[0-9]{3,3}$$/i;
+    const errorMessage=dniRegex.test(dniInput.value)?"":"Email Inválido";
+    return errorMessage.trim();
+}
+
+
+
+export { 
+    onlyIntegers,
+    onlyLetters,
+    controlEmail,
+    onlyIntegersNoNegative,
+    controlDni,
+    controlWhite
+}

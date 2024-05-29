@@ -4,16 +4,27 @@ window.addEventListener('load',()=>{
 
 
 function placeCards(){
-    let peopleData=[
-        {'nombre':'Enrique','apellido':'Espinoza','nacimiento':'31/01/1987',
+    let peopleData=
+    [
+        {'nombre':'Enrique',
+        'apellido':'Espinoza',
+        'nacimiento':'31/01/1987',
         'descripcion':'Estudio Licenciatura en sistemas en la Universidad Nacional Del Nordeste. Estoy en tercer año. Tengo conocimientos sobre Python, HTML, CSS, Javascript, PHP y Base De Datos Con MySQL'+
         '<p>Me gusta leer y mejorar mis técnicas de programación.</p>',
-        'img':'assets/img/persona1.jpg'},
-        {'nombre':'Karen','apellido':'Amarilla','nacimiento':'04/01/1994',
+        'img':'assets/img/persona1.jpg'
+        },
+        {'nombre':'Karen',
+        'apellido':'Amarilla',
+        'nacimiento':'04/01/1994',
         'descripcion':'Soy estudiante del CBC en la Universidad de Buenos Aires, Tengo conocimientos básicos de Python y Java.'+
-        '<p>En mis tiempos libres me gusta leer novelas, anime y practicar Taekwondo.</p>','img':'assets/img/persona1.jpg'},
-        {'nombre':'Matías','apellido':'Cirigliano','nacimiento':'01/01/1995',
-        'descripcion':'Datos Maty','img':'assets/img/persona1.jpg'},
+        '<p>En mis tiempos libres me gusta leer novelas, anime y practicar Taekwondo.</p>',
+        'img':'assets/img/karen.jpg'},
+
+        {'nombre':'Matías',
+        'apellido':'Cirigliano',
+        'nacimiento':'18/07/1984',
+        'descripcion':'Soy Licenciado en Producción de Bioimágenes, trabajo en Radioterapia. Hace poco me inicié en el mundo de la programación, por curiosidades que surgieron en mi trabajo. Me gusta hacer actividad física, principalmente fútbol y escalada deportiva.',
+        'img':'assets/img/persona1.jpg'},
 
     ];
 

@@ -1,6 +1,6 @@
 window.addEventListener("load", ()=>{
 	//cargo los datos iniciales de los productos en caso que no existan
-	if (localStorage.getItem("data")===null) setDatosIniciales();
+	//if (localStorage.getItem("data")===null) setDatosIniciales();
 	insertarFavicon();
 	insertarFontAwesome();
 	//insertarCssBoostrap();
@@ -97,7 +97,7 @@ function insertarEstilos(){
 }
 
 function getProduct(category){
-	const url='customCard.html?category='+category;
+	const url='productView.html?category='+category;
 	window.location.href = url;
 }
 

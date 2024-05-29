@@ -3,7 +3,7 @@
  */
 window.addEventListener("load", () => {
   const session=JSON.parse(sessionStorage.getItem("data"));
-  console.log(session);
+ 
   if(session===null){
     insertNavBar();
   }else if(session.rol==="admin"){
@@ -23,22 +23,26 @@ window.addEventListener("load", () => {
 function insertNavBar() {
   const pathHome = "index.html";
   const pathProduct = "productsView.html";
-  const catEquipoMate="EquipoMate";
+  const catEquipoMate="EquipoMatero";
   const catMate="Mate";
+  const catLatas="Latas";
+  const catBolsoMate="BolsoMatero";
+  const catTermos="Termos"
   const contact="contactForm.html";
   let header = document.getElementById("header");
   let headerContainer = document.createElement("div");
   let imgContainer = document.createElement("div");
+  imgContainer.setAttribute('id','headerContainer');
   headerContainer.setAttribute(
     "class",
-    "d-flex justify-content-center optionBar"
+    "d-flex justify-content-center optionBar mt-5"
   );
   //crea los datos del contenedor de la imagen del logo
   imgContainer.innerHTML = `
-      <div class='container d-lg-flex justify-content-center mt-3 mb-5'>
+      <div class='container d-lg-flex justify-content-center'>
             <div class='row'>
                   <div class='col-lg-5 col-md-12' id='headerImg'>
-                        <img src='assets/img/logos/logo-8.png' class="img-fluid"/>
+                        <img src='assets/img/logos/logo-12.svg' class="img-fluid"/>
                   </div>
 
                   <div class='col-lg-7 col-md-12 d-flex align-items-center 
@@ -46,13 +50,13 @@ function insertNavBar() {
                        <div class="container ms-lg-5">
                           <div class="row ms-5 fw-bold">
                               <div class="col-7 col-sm-8">
-                              <a href="registerForm.html" class="bi bi-people-fill">
-                                    Registrarse
+                              <a href="registerForm.html">
+                                    Registro
                               </a>
                               </div>
 
                               <div class="col-5 col-sm-4">
-                              <a href="formLogin.html" class="bi bi-bookmark-check">
+                              <a href="formLogin.html">
                                   Login
                               </a>
                               </div>
@@ -96,9 +100,12 @@ function insertNavBar() {
        Equipos De Mate</a></li>
        <li><a class="dropdown-item" id="mate"
        onclick="getProduct('${catMate}')">Mate</a></li>
-       <li><a class="dropdown-item" id="termo-mate">Termos y Mates</a></li>
-       <li><a class="dropdown-item" id="latas">Juego De Latas</a></li>
-       <li><a class="dropdown-item" id="bolsos">Bolsos Materos</a></li>
+       <li><a class="dropdown-item" id="Termos"
+       onclick="getProduct('${catTermos}')">Termos</a></li>
+       <li><a class="dropdown-item" id="Latas"
+       onclick="getProduct('${catLatas}')">Juego De Latas</a></li>
+       <li><a class="dropdown-item" id="BolsoMatero"
+       onclick="getProduct('${catBolsoMate}')">Bolsos Materos</a></li>
      </ul>
     
     </li>
@@ -108,8 +115,9 @@ function insertNavBar() {
       Info
     </a>
     <ul class="dropdown-menu optionBar">
-      <li><a href="aboutUs.html" class="dropdown-item" id="termo-mate">¿Quienes Somos?</a></li>
-      <li><a href="policy.html" class="dropdown-item" id="latas">Politica y Privacidad</a></li>
+      <li><a href="aboutUs.html" class="dropdown-item" id="us">¿Quienes Somos?</a></li>
+      <li><a href="policy.html" class="dropdown-item" id="politicas">Politica y Privacidad</a></li>
+      <li><a href="disclaimer.html" class="dropdown-item" id="disclaimer">Disclaimer</a></li>
     </ul>
    
    </li>
@@ -191,6 +199,36 @@ function insertFooter() {
           </li>
       </ul>
   </div>
+  <div class="footer-links">
+  <h4>Sesion</h4>
+  <ul>
+      <li>
+
+      <a href="registerForm.html">
+
+ 
+         Registrarse
+     
+      </a>
+
+          
+          
+      </li>
+
+      <li>
+
+      <a href="formLogin.html">
+  
+          Inicio Sesion
+    
+      </a>
+
+          
+          
+      </li>
+     
+  </ul>
+</div>
   <div class="footer-links">
       <h4>Contáctanos</h4>
       <div class="footer-social">

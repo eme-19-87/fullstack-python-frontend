@@ -11,16 +11,18 @@
   
 	<title>Registrarse</title>
 </head>
-<header id="header">
-	
-</header>
+
 
 
 <body>
+    <header id="header">
+	
+    </header>
 	<main class="main">
-        <h2 class="titleRegister">Registrarse</h2>
+        <h1 class="titleRegister">Registrarse</h1>
         <!--Etiqueta form principal-->
-		<form action="registerForm.html" class="form" id="form" enctype="multipart/form-data"
+		<form action="registerForm.html" class="form" id="form" 
+        enctype="multipart/form-data"
         method="post">
             <!---Grupo para pedir un dato al usuario-->
             <div class="form__group" id="name__group">
@@ -30,7 +32,7 @@
                     
                     <!--<i class="form__validation-state bi bi-x-octagon"></i>-->
                 </div>
-
+                <small id="name-error"></small>
             </div>
 
             <!---Grupo para pedir un dato al usuario-->
@@ -41,7 +43,7 @@
                     <!--<i class="form__validation-state bi bi-x-octagon"></i>-->
                     <!--<small class="form__input-error lastName-error"></small>-->
                 </div>
-
+                <small id="lastName-error"></small>
             </div>
 
               <!---Grupo para pedir un dato al usuario-->
@@ -52,7 +54,9 @@
                     <!--<i class="form__validation-state bi bi-x-octagon"></i>-->
                     <!--<small class="form__input-error email-error"></small>-->
                 </div>
+                <small id="email-error"></small>
                 </div>
+                
                  <!---Grupo para pedir un dato al usuario-->
               <div class="form__group" id="telephone__group">
                 <label for="telephone" class="form__label">Teléfono</label>
@@ -61,7 +65,7 @@
                     <!--<i class="form__validation-state bi bi-x-octagon"></i>-->
                     <!--<small class="form__input-error telephone-error"></small>-->
                 </div>
-
+                <small id="phone-error"></small>
               </div>
                 <div class="form__group" id="password__group">
                     <label for="password" class="form__label">Contraseña</label>
@@ -70,7 +74,7 @@
                         <!--<i class="form__validation-state bi bi-x-octagon"></i>-->
                         <!--<small class="form__input-error password-error"></small>-->
                     </div>
-
+                    <small id="password-error"></small>
             </div>
 
             <div class="form__group" id="password2__group">
@@ -80,18 +84,20 @@
                     <!--<i class="form__validation-state bi bi-x-octagon"></i>-->
                     <!--<small class="form__input-error password2-error"></small>-->
                 </div>
+                <small id="password2-error"></small>
             </div>
 
             <div class="form__group" id="sex__group">
-                <label for="sex" class="form__label">Sexo</label>
-                <div class="form__group-input">
-                    <div class="radio-box">
-                        <input type="radio" name="genre" id="male" checked>
+                <span class="form__label">Sexo</span>
+                <div class="form__group-input sex">
+                    <div class="radio-box" >
+                        <input type="radio" name="genre" id="male" value="male">
                         <label for="male">Hombre</label>
-                        <input type="radio" name="genre" id="female">
+                        <input type="radio" name="genre" id="female" value="female">
                         <label for="female">Mujer</label>
                     </div>
                 </div>
+                <small id="sex-error"></small>
             </div>
 
             <div class="form__group" id="state__group">
@@ -99,31 +105,41 @@
                 <div class="form__group-input">
                     
                 <select name="state" id="state">
-                    <option value="Corrientes">Corrientes</option>
-                    <option value="Chaco">Chaco</option>
-                    <option value="Formosa">Formosa</option>
-                    <option value="Misiones">Misiones</option>
+                    <option selected="selected" value=0 disabled>Seleccione una provincia</option>
+                    <option value="1">Corrientes</option>
+                    <option value="2">Chaco</option>
+                    <option value="3">Formosa</option>
+                    <option value="4">Misiones</option>
                 </select>
                 </div>
+                <small id="state-error"></small>
             </div>
 
-            <div class="form__group" id="state__group">
-                <label for="state" class="form__label">
+            <div class="form__group">
+                <label for="avatar" class="form__label">
                     Avatar
                 </label>
                 <div class="form__group-input">
                     <input type="file" name="avatar" id="avatar"
                     accept="image/png,image/jpeg,image/jpg,image/gif">
+                    <small id="avatar-error"></small>
                  </div>
                  <small>Archivos jpg, jpeg, gif, png</small>
             </div>
            
 
-            <div class="form__group" id="terms__group">
-                <label class="form__label">
-                    <input type="checkbox" class="form__checkbox" name="terms" id="terms">
-                    Aceptar Términos y Condiciones
-                </label>
+            <div class="form__group text-center" id="terms__group">
+                
+                <div>
+                    <label class="form__label">
+                        Aceptar Términos y Condiciones
+                      
+                    <input type="checkbox" class="form__checkbox" name="terms" id="terms"
+                             style="display:inline;">
+                    </label>
+                    
+                </div>
+                <small id="terms-error"></small>
             </div>
 
            <!-- <div class="form__msg" id="msgError" name="msgError">

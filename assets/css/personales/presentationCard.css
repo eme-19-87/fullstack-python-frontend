@@ -1,11 +1,12 @@
-/*PEN STYLES*/
+/*Estilos para la tarjeta de presentación de los miembros del grupo que se encuentra en
+quienes somos*/
 
 * {
     box-sizing: border-box;
   }
   
   #us-information {
-    background: #f1f1f1;
+    background:transparent;
     font-size: 1rem;
     justify-content: center;
     align-items: center;
@@ -29,6 +30,7 @@
     font-family: sans-serif;
     border-radius: 5px;
     overflow: hidden;
+    width:95%;
     color:var(--first-grey);
     text-align: center;
     z-index: 0;
@@ -125,16 +127,21 @@
         }
     }
   
-    @media (min-width: 640px) {
-      flex-direction: row;
+    @media (min-width: 420px) {
+      flex-direction: column;
       max-width: 700px;
       .meta {
         flex-basis: 40%;
         height: auto;
+    
       }
       .description {
         flex-basis: 60%;
        
+      }
+      .blog-card{
+        width:95%!important;
+        margin:0 auto;
       }
       &.alt {
         flex-direction: row-reverse;
@@ -171,7 +178,8 @@
   .jumbotron { 
     margin-top:50px;
     padding: 30px; /* fills out the jumbotron */
-    background-color: var(--first-grey-dark);
+    background:linear-gradient(var(--first-grey-dark),var(--first-dark));
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
     color:var(--first-grey);
     
   }
@@ -184,12 +192,18 @@
 
   .us-container{
     font-size: 1.5rem;
-    
+    font-weight: 600;
+    background:linear-gradient(var(--first-cream),var(--first-grey));
+    width:90%;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+    color:var(--first-dark);
+    border-radius: 10px;
+    margin: 10px auto;
   }
   
   .jumbotron .jumbotron__container { 
     max-width: 90%; /* allows the jumbotron to adjust on smaller widths */
-   
+  
   }
   
   #jumbotron-title{ 
