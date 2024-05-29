@@ -39,7 +39,7 @@ function insertNavBar() {
       <div class='container d-lg-flex justify-content-center'>
             <div class='row'>
                   <div class='col-lg-5 col-md-12' id='headerImg'>
-                        <img src='assets/img/logos/logo-8.png' class="img-fluid"/>
+                        <img src='assets/img/logos/logo-12.svg' class="img-fluid"/>
                   </div>
 
                   <div class='col-lg-7 col-md-12 d-flex align-items-center 
