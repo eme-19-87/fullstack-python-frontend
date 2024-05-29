@@ -447,12 +447,12 @@ async function applySuccessToSubmit(formRegister){
 
       const { value: url } = await Swal.fire({
         title:'Formulario Comprobado',
-        text:'¿Desea enviarlo a formfree? Coloque la url',
+        text:'¿Desea enviarlo a formspree o similar? (nota, formfree tiene problemas para aceptar la imagen)',
         icon:'success',
         showCancelButton:true,
         input: "url",
-        inputLabel: "URL address",
-        inputPlaceholder: "Enter the URL"
+        inputLabel: "URL",
+        inputPlaceholder: "Coloque la URL"
       });
       if (url) {
         const form=document.querySelector('#form')
