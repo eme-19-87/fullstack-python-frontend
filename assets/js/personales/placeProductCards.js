@@ -21,7 +21,7 @@ window.addEventListener("load", ()=>{
         Posición 1: Mate
         Me quedo con la posición 1 y, entonces, recupero los productos de la categoría Mate
         */
-       console.log(window.location.href.split('?').length>1);
+       
         if(window.location.href.split('?').length>1){
             category=window.location.href.split('?')[1].split('=')[1];
             placeCards(category);

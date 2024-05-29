@@ -97,7 +97,7 @@ function insertarEstilos(){
 }
 
 function getProduct(category){
-	const url='customCard.html?category='+category;
+	const url='productView.html?category='+category;
 	window.location.href = url;
 }
 

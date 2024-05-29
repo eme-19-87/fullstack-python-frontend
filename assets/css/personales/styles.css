@@ -13,22 +13,22 @@ https://paletadecolores.com.ar/paleta/6da67a/77b885/86c28b/859987/4a4857/
   --first-dark:#3C3633;
 
   /*Segunda paleta de colores*/
-  --second-palid-blue:#8CB9BD;
+  /*--second-palid-blue:#8CB9BD;
   --second-white:#FEFBF6;
   --second-orange: #ECB159;
-  --second-brown:#B67352;
+  --second-brown:#B67352;*/
 
   /*Tercera paleta de colores*/
-  --third-high-brown:#6B240C;
+  /*--third-high-brown:#6B240C;
   --third-low-brown:#994D1C;
   --third-orange:#E48F45;
-  --third-skin:#F5CCA0;
+  --third-skin:#F5CCA0;*/
 
   /*Cuarta paleta de colores*/
-  --forth-palid-skin:#FAEBE0;
+  /*--forth-palid-skin:#FAEBE0;
   --forth-first-green: #C9E4C5;
   --forth-second-green:#B5CDA3;
-  --forth-brown:#C1AC95;
+  --forth-brown:#C1AC95;*/
 
   /*atributos*/
   --color-fondo-pie:var(--first-dark);
@@ -113,6 +113,9 @@ ul{
 
 .opcionesRegistro a{
    color: var(--first-dark);
+   font-weight: 600;
+   font-size: 1.5rem;
+   box-shadow: #3C3633;
    
 }
 
