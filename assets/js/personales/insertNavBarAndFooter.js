@@ -51,12 +51,12 @@ function insertNavBar() {
                           <div class="row ms-5 fw-bold">
                               <div class="col-7 col-sm-8">
                               <a href="registerForm.html">
-                                    Registrarse
+                                    Registro
                               </a>
                               </div>
 
                               <div class="col-5 col-sm-4">
-                              <a href="formLogin.html" class="bi bi-bookmark-check">
+                              <a href="formLogin.html">
                                   Login
                               </a>
                               </div>
