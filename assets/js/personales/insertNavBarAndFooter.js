@@ -25,6 +25,9 @@ function insertNavBar() {
   const pathProduct = "productsView.html";
   const catEquipoMate="EquipoMatero";
   const catMate="Mate";
+  const catLatas="Latas";
+  const catBolsoMate="BolsoMatero";
+  const catTermos="Termos"
   const contact="contactForm.html";
   let header = document.getElementById("header");
   let headerContainer = document.createElement("div");
@@ -39,7 +42,7 @@ function insertNavBar() {
       <div class='container d-lg-flex justify-content-center'>
             <div class='row'>
                   <div class='col-lg-5 col-md-12' id='headerImg'>
-                        <img src='assets/img/logos/logo-8.png' class="img-fluid"/>
+                        <img src='assets/img/logos/logo-12.svg' class="img-fluid"/>
                   </div>
 
                   <div class='col-lg-7 col-md-12 d-flex align-items-center 
@@ -97,9 +100,12 @@ function insertNavBar() {
        Equipos De Mate</a></li>
        <li><a class="dropdown-item" id="mate"
        onclick="getProduct('${catMate}')">Mate</a></li>
-       <li><a class="dropdown-item" id="termo-mate">Termos y Mates</a></li>
-       <li><a class="dropdown-item" id="latas">Juego De Latas</a></li>
-       <li><a class="dropdown-item" id="bolsos">Bolsos Materos</a></li>
+       <li><a class="dropdown-item" id="Termos"
+       onclick="getProduct('${catTermos}')">Termos</a></li>
+       <li><a class="dropdown-item" id="Latas"
+       onclick="getProduct('${catLatas}')">Juego De Latas</a></li>
+       <li><a class="dropdown-item" id="BolsoMatero"
+       onclick="getProduct('${catBolsoMate}')">Bolsos Materos</a></li>
      </ul>
     
     </li>

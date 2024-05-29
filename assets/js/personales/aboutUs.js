@@ -22,8 +22,8 @@ function placeCards(){
 
         {'nombre':'Matías',
         'apellido':'Cirigliano',
-        'nacimiento':'01/01/1995',
-        'descripcion':'Datos Maty',
+        'nacimiento':'18/07/1984',
+        'descripcion':'Soy Licenciado en Producción de Bioimágenes, trabajo en Radioterapia. Hace poco me inicié en el mundo de la programación, por curiosidades que surgieron en mi trabajo. Me gusta hacer actividad física, principalmente fútbol y escalada deportiva.',
         'img':'assets/img/persona1.jpg'},
 
     ];

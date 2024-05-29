@@ -49,7 +49,7 @@ function getProductos(){
         id:6,
         nombre:'Mate Pampa',
         precio:'$8.060,00',
-        rutaImg:'mate1.jpeg',
+        rutaImg:'mate1.png',
         descripcion:'Prueba primer mate',
         categoria:"Mate",
         activo:1
@@ -58,11 +58,48 @@ function getProductos(){
         id:7,
      nombre:'Mate Uruguayo Camionero',
      precio:'$10.415,00',
-     rutaImg:'mate2.jpeg',
+     rutaImg:'mate2.png',
      descripcion:'prueba segundo mate',
      categoria:"Mate",
      activo:1
     },
+    {
+        id:8,
+     nombre:'Yerba Mate "Fronteras" en Lata ',
+     precio:'$10.000,00',
+     rutaImg:'yerbamate_lata.png',
+     descripcion:'Yerba en Lata',
+     categoria:"Latas",
+     activo:1
+    },
+    {
+        id:9,
+     nombre:'Bolso Matero Camel',
+     precio:'$20.000,00',
+     rutaImg:'bolso_matero.png',
+     descripcion:'Bolso matero, ideal salidas',
+     categoria:"BolsoMatero",
+     activo:1
+    },
+    {
+        id:10,
+     nombre:'Termo Lumi Argentina',
+     precio:'$25.000,00',
+     rutaImg:'termoArg.svg',
+     descripcion:'Argentina Mi país',
+     categoria:"Termos",
+     activo:1
+    },
+ {
+        id:11,
+     nombre:'Little Mate de Colores',
+     precio:'$2.500,00',
+     rutaImg:'mate3.png',
+     descripcion:'Mates pequeños, colores varios',
+     categoria:"Mate",
+     activo:1
+    },
+
     
     ];
 }
