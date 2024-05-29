@@ -16,10 +16,13 @@ Estilo para el footer
   
     .footer-color li{
       list-style-type: none;
+      text-align: center;
     }
 
 .footer-links ul{
     list-style:none!important;
+    padding-left: 0!important;
+    
 }
 
 .container{
@@ -63,7 +66,7 @@ Estilo para el footer
 
 .footer-links li{
     margin-bottom: 10px;
-    text-align: left;
+    text-align: center;
     text-transform: lowercase;
 }
 .footer-links h4{

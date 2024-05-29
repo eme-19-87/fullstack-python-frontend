@@ -3,7 +3,7 @@
  */
 window.addEventListener("load", () => {
   const session=JSON.parse(sessionStorage.getItem("data"));
-  console.log(session);
+ 
   if(session===null){
     insertNavBar();
   }else if(session.rol==="admin"){
@@ -47,7 +47,7 @@ function insertNavBar() {
                        <div class="container ms-lg-5">
                           <div class="row ms-5 fw-bold">
                               <div class="col-7 col-sm-8">
-                              <a href="registerForm.html" class="bi bi-people-fill">
+                              <a href="registerForm.html">
                                     Registrarse
                               </a>
                               </div>
@@ -109,8 +109,9 @@ function insertNavBar() {
       Info
     </a>
     <ul class="dropdown-menu optionBar">
-      <li><a href="aboutUs.html" class="dropdown-item" id="termo-mate">¿Quienes Somos?</a></li>
-      <li><a href="policy.html" class="dropdown-item" id="latas">Politica y Privacidad</a></li>
+      <li><a href="aboutUs.html" class="dropdown-item" id="us">¿Quienes Somos?</a></li>
+      <li><a href="policy.html" class="dropdown-item" id="politicas">Politica y Privacidad</a></li>
+      <li><a href="disclaimer.html" class="dropdown-item" id="disclaimer">Disclaimer</a></li>
     </ul>
    
    </li>
@@ -192,6 +193,36 @@ function insertFooter() {
           </li>
       </ul>
   </div>
+  <div class="footer-links">
+  <h4>Sesion</h4>
+  <ul>
+      <li>
+
+      <a href="registerForm.html">
+
+ 
+         Registrarse
+     
+      </a>
+
+          
+          
+      </li>
+
+      <li>
+
+      <a href="formLogin.html">
+  
+          Inicio Sesion
+    
+      </a>
+
+          
+          
+      </li>
+     
+  </ul>
+</div>
   <div class="footer-links">
       <h4>Contáctanos</h4>
       <div class="footer-social">
