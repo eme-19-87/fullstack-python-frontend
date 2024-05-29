@@ -49,7 +49,7 @@ function getProductos(){
         id:6,
         nombre:'Mate Pampa',
         precio:'$8.060,00',
-        rutaImg:'mate1.jpeg',
+        rutaImg:'mate1.png',
         descripcion:'Prueba primer mate',
         categoria:"Mate",
         activo:1
@@ -58,7 +58,7 @@ function getProductos(){
         id:7,
      nombre:'Mate Uruguayo Camionero',
      precio:'$10.415,00',
-     rutaImg:'mate2.jpeg',
+     rutaImg:'mate2.png',
      descripcion:'prueba segundo mate',
      categoria:"Mate",
      activo:1
@@ -94,7 +94,7 @@ function getProductos(){
         id:11,
      nombre:'Little Mate de Colores',
      precio:'$2.500,00',
-     rutaImg:'Mate3.png',
+     rutaImg:'mate3.png',
      descripcion:'Mates pequeños, colores varios',
      categoria:"Mate",
      activo:1
