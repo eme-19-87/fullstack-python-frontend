@@ -65,7 +65,7 @@ function getProductos(){
     },
     {
         id:8,
-     nombre:'Yerba Mate Fronteras en Lata ',
+     nombre:'Yerba Mate "Fronteras" en Lata ',
      precio:'$10.000,00',
      rutaImg:'yerbamate_lata.png',
      descripcion:'Yerba en Lata',
