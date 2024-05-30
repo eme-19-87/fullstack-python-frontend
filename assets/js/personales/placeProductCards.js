@@ -1,5 +1,5 @@
 window.addEventListener("load", ()=>{
-    if (localStorage.getItem("data")===null) setDatosIniciales();
+    if (localStorage.getItem("dataAlmacenMate")===null) setDatosIniciales();
     //En caso de producirse algun error, muestra una de las categorías solamente
    // try {
         /*
@@ -44,7 +44,7 @@ window.addEventListener("load", ()=>{
 
 function placeCards(category="EquipoMatero"){
 
-    const categoryData=JSON.parse(localStorage.getItem("data"));
+    const categoryData=JSON.parse(localStorage.getItem("dataAlmacenMate"));
 
     const dataToShow=categoryData.datos.filter((data)=>{
         return data.categoria===category;

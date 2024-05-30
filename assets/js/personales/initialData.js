@@ -109,5 +109,5 @@ function setDatosIniciales(){
         datos:getProductos(),
         categorias:['Equipo Mate','Mate']
     });
-    localStorage.setItem("data", categoryData);
+    localStorage.setItem("dataAlmacenMate", categoryData);
 }
