@@ -29,6 +29,7 @@ function insertNavBar() {
   const catBolsoMate="BolsoMatero";
   const catTermos="Termos"
   const contact="contactForm.html";
+  const administrador="index_admin.html"
   let header = document.getElementById("header");
   let headerContainer = document.createElement("div");
   let imgContainer = document.createElement("div");
@@ -126,6 +127,10 @@ function insertNavBar() {
  
  <li class="nav-item">
      <a class="nav-link" aria-current="page" href='${contact}'>Contacto</a>
+ </li>
+
+ <li class="nav-item">
+     <a class="nav-link" aria-current="page" href='${administrador}'>Administrador</a>
  </li>
  </ul>
 
