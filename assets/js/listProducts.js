@@ -86,9 +86,9 @@ productos.forEach(producto => {
 function lista_productos(id=-1){
     //la dirección de la API
     if(id<1){
-         action='http://kike8789.pythonanywhere.com/api/productos/get'
+         action='https://kike8789.pythonanywhere.com/api/productos/get'
     }else{
-         action=`http://kike8789.pythonanywhere.com/api/productos/get_filtrar_categoria/${id}`
+         action=`https://kike8789.pythonanywhere.com/api/productos/get_filtrar_categoria/${id}`
     }
    
     //Un objeto cabecera
@@ -115,7 +115,7 @@ function lista_productos(id=-1){
  * @param {Integer} producto_id El id del producto cuyos detalles se quieren mostrar
  */
 function ver_detalles(producto_id){
-    action=`http://kike8789.pythonanywhere.com/api/productos/get_one/${producto_id}`
+    action=`https://kike8789.pythonanywhere.com/api/productos/get_one/${producto_id}`
     let encabezado = new Headers();
 
 	//establezco las configuraciones para el envío
@@ -174,7 +174,7 @@ function ver_detalles(producto_id){
 
 
 function eliminar_producto(producto_id){
-    action=`http://kike8789.pythonanywhere.com/api/productos/delete/${producto_id}`
+    action=`https://kike8789.pythonanywhere.com/api/productos/delete/${producto_id}`
     let encabezado = new Headers();
 
 	//establezco las configuraciones para el envío
@@ -211,7 +211,7 @@ function eliminar_producto(producto_id){
 }
 
 function llenar_filtro_categoria(){
-    action='http://kike8789.pythonanywhere.com/api/productos/get_categorias'
+    action='https://kike8789.pythonanywhere.com/api/productos/get_categorias'
     let encabezado=new Headers()
     let config = {
         method: "GET",
