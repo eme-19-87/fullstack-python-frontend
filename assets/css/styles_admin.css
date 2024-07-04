@@ -1,0 +1,24 @@
+a,li{
+    cursor: pointer;
+}
+
+.color-view{
+    color:lightgreen
+}
+
+.color-delete{
+    color:red
+}
+
+.color-edit{
+    color:darkblue
+}
+
+.msjError{
+    color:red
+}
+
+img{
+    width: 90%;
+    height: 90%;
+}
