@@ -18,7 +18,7 @@ window.addEventListener('load',(e)=>{
  */
 function cargar_categorias(categoria_id){
     let categorias=document.querySelector('#category')
-    const action='http://kike8789.pythonanywhere.com/api/productos/get_categorias'
+    const action='https://kike8789.pythonanywhere.com/api/productos/get_categorias'
 	
 //creo la cabecera para enviar mis datos
     let encabezado = new Headers();

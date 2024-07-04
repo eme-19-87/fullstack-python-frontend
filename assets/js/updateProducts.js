@@ -34,7 +34,7 @@ window.addEventListener('load',(e)=>{
  */
 function cargar_categorias(categoria_id){
     let categorias=document.querySelector('#category')
-    const action='http://kike8789.pythonanywhere.com/api/productos/get_categorias'
+    const action='https://kike8789.pythonanywhere.com/api/productos/get_categorias'
 	//creo la cabecera para enviar mis datos
         let encabezado = new Headers();
 	//establezco las configuraciones para el envío
@@ -71,7 +71,7 @@ function cargar_datos_producto(){
     let method = "GET";
 	
 	//recupero la url en donde enviaré los datos del formulario
-    let action = `http://kike8789.pythonanywhere.com/api/productos/get_one/${idTag.value}`
+    let action = `https://kike8789.pythonanywhere.com/api/productos/get_one/${idTag.value}`
 	//creo la cabecera para enviar mis datos
     let encabezado = new Headers();
 	//establezco las configuraciones para el envío
