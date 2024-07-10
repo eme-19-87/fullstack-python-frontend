@@ -4,8 +4,6 @@ window.addEventListener('load',()=>{
     llenar_filtro_categoria()
 })
 
-
-
 /**
  * Permite crear la tabla con los datos de los productos
  * @param {Array} productos La lista de objetos que representan los productos

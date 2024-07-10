@@ -22,7 +22,7 @@ window.addEventListener('load',(e)=>{
     
     formulariosAjax.forEach(formulario => {
         formulario.appendChild(idTag)
-        formulario.addEventListener('submit',actualizar_producto);
+        formulario.addEventListener('submit',(e)=>confirmar_actualizacion(e));
     });
     cargar_datos_producto()
 })
@@ -117,32 +117,27 @@ function actualizar_producto(e){
     //evitamos que el formulario se envíe
     e.preventDefault();
 	
-    //ventana emergente para realizar la confirmación
-    let send = confirm('Enviar Formulario'); 
-    
-    //si la confirmación es aceptada
-    if(send==true){
 	//creamos los datos tomando los datos del formulario.
 	//Ese this hace referencia al formulario donde se produjo el evento submit
-        let datos = new FormData(this);
+    let datos = new FormData(e.target);
 	
 	//recupero el método del formulario
-        let method = this.getAttribute('method');
+    let method = e.target.getAttribute('method');
 	
 	//recupero la url en donde enviaré los datos del formulario
-        let action = this.getAttribute('action')
+    let action = e.target.getAttribute('action')
 
 	//creo la cabecera para enviar mis datos
-        let encabezado = new Headers();
+    let encabezado = new Headers();
 	//establezco las configuraciones para el envío
-        let config = {
+    let config = {
             method: method,
             headers: encabezado,
             mode:'cors',
             cache:'no-cache',
             body:datos,
            
-        }
+    }
         fetch(action,config)
         .then(respuesta => respuesta.json()) 
         .then(respuesta =>{
@@ -181,5 +176,19 @@ function actualizar_producto(e){
 
     }
 
+
+function confirmar_actualizacion(e){
+    e.preventDefault()
+    Swal.fire({
+        title: "¿Desea actulizar el producto?",
+        showCancelButton: true,
+        confirmButtonColor: "#3085d6",
+        cancelButtonColor: "#d33",
+        confirmButtonText: "Sí"
+      }).then((result) => {
+        if (result.isConfirmed) {
+            actualizar_producto(e)
+        }
+      });
 }
 
