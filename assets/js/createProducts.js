@@ -103,6 +103,32 @@ function crear_producto(e){
             //controla si la respuesta devuelta tiene o no errores
             //si no los tiene, mostrará los mensajes de la creación de productos
             if(!respuesta.error){
+		    // ✅ Envío exitoso: primero enviamos los datos a Fluentd
+		   //***INICIO ENVÍO DE DATOS A FLUENT***
+            const productoData = {};
+            datos.forEach((valor, clave) => {
+                productoData[clave] = valor;
+            });
+
+            // Agregamos metadata del evento
+            const evento = {
+                event: "producto_creado",
+                timestamp: new Date().toISOString(),
+                data: productoData,
+                backend_msg: respuesta.msg
+            };
+
+            // Enviar a Fluentd
+            fetch("http://127.0.0.1:9880/productos", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify(evento)
+            })
+            .then(r => {
+                if (!r.ok) console.error("No se pudo enviar a Fluentd", r.statusText);
+            })
+            .catch(err => console.error("Error enviando a Fluentd:", err));
+		    //***FIN ENVÍO DE DATOS A FLUENT***
                 Swal.fire({
                     title: `${respuesta.msg}`,
                     text:"Por favor, haga click en el botón para continuar",
